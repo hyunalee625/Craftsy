@@ -1,6 +1,6 @@
 import React from "react";
 
-class LoginForm extends React.Component {
+class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
@@ -30,12 +30,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <br />
-          <div>{this.props.navLink} instead</div>
-          {this.renderErrors()}
-          <div className="login-form">
+      <div className="signin-form-container">
+        <form className="signin-form-box" onSubmit={this.handleSubmit}>
+          <div className="signin-form">
             <br />
             <label>
               Username:
@@ -43,7 +40,7 @@ class LoginForm extends React.Component {
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
-                className="login-input"
+                className="signin-input"
               />
             </label>
             <br />
@@ -54,7 +51,7 @@ class LoginForm extends React.Component {
                 type="text"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="login-input"
+                className="signin-input"
               />
             </label>
             <br />
@@ -63,6 +60,8 @@ class LoginForm extends React.Component {
               type="submit"
               value={this.props.formType}
             />
+            <br />
+            {this.renderErrors()}
           </div>
         </form>
       </div>
@@ -70,4 +69,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default SignInForm;

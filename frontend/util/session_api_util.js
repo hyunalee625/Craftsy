@@ -5,7 +5,7 @@ export const register = user =>
     data: { user }
   });
 
-export const login = user =>
+export const signIn = user =>
   $.ajax({
     method: "post",
     url: "api/session",

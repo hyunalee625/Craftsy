@@ -32,9 +32,6 @@ class RegisterForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <br />
-          <div>{this.props.navLink} instead</div>
-          {this.renderErrors()}
           <div className="login-form">
             <br />
             <label>
@@ -73,6 +70,8 @@ class RegisterForm extends React.Component {
               value={this.props.formType}
             />
           </div>
+          <br />
+          {this.renderErrors()}
         </form>
       </div>
     );
