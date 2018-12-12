@@ -3,11 +3,12 @@ import React from "react";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "" }; //TODO Consider having login form and signup form as signup form should take in email as well
+    this.state = { username: "", email: "", password: "" }; //TODO Consider having login form and signup form as signup form should take in email as well
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    e => this.setState({ [field]: e.currentTarget.value });
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
@@ -47,7 +48,16 @@ class SessionForm extends React.Component {
             </label>
             <br />
             <label>
-              {" "}
+              Email:
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                className="login-input"
+              />
+            </label>
+            <br />
+            <label>
               Password:
               <input
                 type="text"
