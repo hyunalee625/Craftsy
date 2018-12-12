@@ -1,10 +1,11 @@
 import React from "react";
 
-class SessionForm extends React.Component {
+class RegisterForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", email: "", password: "" }; //TODO Consider having login form and signup form as signup form should take in email as well
+    this.state = { username: "", email: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
@@ -78,4 +79,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default RegisterForm;
