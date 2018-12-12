@@ -1,5 +1,6 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import { AuthRoute } from "../util/route_util";
 import GreetingContainer from "./greeting/greeting_container";
 import loginFormContainer from "./session/login_form_container";
 import signupFormContainer from "./session/signup_form_container";
@@ -7,11 +8,13 @@ import signupFormContainer from "./session/signup_form_container";
 const App = () => (
   <div>
     <header>
-      <h1>Welcome to Craftsy!</h1>
+      <h1>Craftsy</h1>
       <GreetingContainer />
     </header>
-    <Route path="/login" component={loginFormContainer} />
-    <Route path="/signup" component={signupFormContainer} />
+    <Switch>
+      <AuthRoute path="/login" component={loginFormContainer} />
+      <AuthRoute path="/signup" component={signupFormContainer} />
+    </Switch>
   </div>
 );
 
