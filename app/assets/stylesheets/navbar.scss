@@ -1,0 +1,44 @@
+@import "global.scss";
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.homepage-link {
+  color: $orange;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+button {
+  margin: 5px;
+}
+
+.Register {
+  border: none;
+  font-size: 14px;
+}
+
+.Register:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.SignIn {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.SignIn:hover {
+  background: black;
+  color: white;
+}

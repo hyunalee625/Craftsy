@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class NavBar extends React.Component {
   sessionLinks() {
     return (
-      <>
+      <div className="sessionLinks">
         <button
           className="Register"
           onClick={() => this.props.openModal("register")}
@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         <button className="SignIn" onClick={() => this.props.signInDemo()}>
           Demo
         </button>
-      </>
+      </div>
     );
   }
 
@@ -45,10 +45,14 @@ class NavBar extends React.Component {
     return (
       <div className="NavBarContainer">
         <nav className="NavBar">
-          <Link to="/" className="homepage-link">
-            <h1>Craftsy</h1>
-          </Link>
-          {this.greeting()}
+          <div className="NavBarLeft">
+            <Link to="/" className="homepage-link">
+              Craftsy
+            </Link>
+          </div>
+          <div className="NavBarRight">
+            {this.greeting()}
+          </div>
         </nav>
       </div>
     );
