@@ -1,7 +1,7 @@
 @import "global.scss";
 
 .NavBarContainer {
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid #e1e3df;
 }
 
 .NavBar {
@@ -9,7 +9,7 @@
   justify-content: space-between;
   height: 40px;
   margin: 20px auto;
-  background-color: #FFF;
+  background-color: #fff;
   max-width: 1402px;
 }
 
@@ -17,24 +17,21 @@
   color: #f45800;
   text-decoration: none;
   font-size: 36px;
-  font-family: 'Noto Serif SC', serif;
+  font-family: "Noto Serif SC", serif;
 }
 
-button {
+.register-button {
   margin: 6px;
-}
-
-.Register {
   border: none;
   font-size: 14px;
 }
 
-.Register:hover {
+.register-button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.SignIn {
+.login-logout-button {
   border: 1px solid black;
   border-radius: 3px;
   padding: 8px;
@@ -42,9 +39,27 @@ button {
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
+  margin: 6px;
 }
 
-.SignIn:hover {
+.login-logout-button:hover {
   background: black;
   color: white;
+}
+
+.greeting-container {
+  display: flex;
+}
+
+.welcome-message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome,
+.username {
+  margin: auto;
+  padding-right: 15px;
+  font-size: 16px;
+  font-weight: bold;
 }
