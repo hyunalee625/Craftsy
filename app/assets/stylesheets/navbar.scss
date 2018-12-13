@@ -1,21 +1,27 @@
 @import "global.scss";
 
+.NavBarContainer {
+  border-bottom: 1px solid #E1E3DF;
+}
+
 .NavBar {
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 40px;
   margin: 20px auto;
-  border-bottom: 1px solid rgb(212, 212, 212);
+  background-color: #FFF;
+  max-width: 1402px;
 }
 
 .homepage-link {
-  color: $orange;
+  color: #f45800;
   text-decoration: none;
-  font-size: 32px;
+  font-size: 36px;
+  font-family: 'Noto Serif SC', serif;
 }
 
 button {
-  margin: 5px;
+  margin: 6px;
 }
 
 .Register {
