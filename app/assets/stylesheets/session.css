@@ -1,17 +1,23 @@
 .signin-form-container {
   border: 1px solid lightgrey;
   background: white;
-  width: 400px;
+  height: 500px;
+  width: 360px;
   padding-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .login-form-container {
   border: 1px solid lightgrey;
   background: white;
-  width: 400px;
+  height: 500px;
+  width: 360px;
   padding-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
+}
+
+.errorMessage {
+  color: red;
 }
 
 .signin-form-box {

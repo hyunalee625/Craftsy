@@ -20,11 +20,15 @@ class RegisterForm extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   renderErrors() {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="errorMessage" key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );

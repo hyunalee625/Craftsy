@@ -20,15 +20,18 @@ class SignInForm extends React.Component {
     })
   };
 
-
   renderErrors() {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="errorMessage" key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   render() {
@@ -63,6 +66,7 @@ class SignInForm extends React.Component {
               type="submit"
               value={this.props.formType}
             />
+            <br />
             <br />
             {this.renderErrors()}
           </div>
