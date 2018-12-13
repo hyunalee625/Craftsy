@@ -19,7 +19,7 @@ const receiveErrors = errors => ({
 });
 
 export const signIn = user => dispatch =>
-  SessionApiUtil.signin(user).then(
+  SessionApiUtil.signIn(user).then(
     user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );

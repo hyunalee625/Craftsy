@@ -6,11 +6,11 @@ import SignInForm from "./signin_form";
 
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.session,
-  formType: "Log In"
+  formType: "Sign In"
 });
 
 const mapDispatchToProps = dispatch => ({
-  processForm: user => dispatch(login(user))
+  processForm: user => dispatch(signin(user))
 });
 
 export default connect(
