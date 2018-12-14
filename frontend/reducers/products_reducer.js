@@ -6,7 +6,7 @@ import {
 
 import merge from "lodash/merge";
 
-const productsReducer = (state, action) => {
+const productsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
   switch (action.type) {
