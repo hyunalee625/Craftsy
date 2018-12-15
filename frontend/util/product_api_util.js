@@ -24,7 +24,7 @@ export const updateProduct = product =>
     data: { product }
   });
 
-export const removeProduct = id =>
+export const deleteProduct = id =>
   $.ajax({
     method: "delete",
     url: `api/products/${id}`

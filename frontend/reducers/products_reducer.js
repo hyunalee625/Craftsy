@@ -19,6 +19,8 @@ const productsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.productId];
       return newState;
+    default:
+      return state;
   }
 };
 

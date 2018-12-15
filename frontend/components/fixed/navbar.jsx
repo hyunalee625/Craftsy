@@ -37,7 +37,6 @@ class NavBar extends React.Component {
 
   dropDown() {
     document.getElementById("user-dropdown-container").classList.toggle("show");
-    console.log("hey");
   }
 
   loggedInGreeting() {
@@ -83,6 +82,9 @@ class NavBar extends React.Component {
           <div className="NavBarLeft">
             <Link to="/" className="homepage-link">
               Craftsy
+            </Link>
+            <Link to="/products" className="all-products-link">
+              All Products
             </Link>
           </div>
           <div className="NavBarRight">{this.greeting()}</div>

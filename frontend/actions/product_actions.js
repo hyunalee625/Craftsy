@@ -36,7 +36,7 @@ export const fetchProduct = id => dispatch =>
   );
 
 export const createProduct = product => dispatch =>
-  ProductApiUtil.createPost(product).then(
+  ProductApiUtil.createProduct(product).then(
     product => dispatch(receiveProduct(product)),
     err => dispatch(receiveProductErrors(err.responseJSON))
   );
@@ -47,7 +47,7 @@ export const updateProduct = product => dispatch =>
     err => dispatch(receiveProductErrors(err.responseJSON))
   );
 
-export const removeProduct = id => dispatch =>
-  ProductApiUtil.removeProduct(id).then(product =>
+export const deleteProduct = id => dispatch =>
+  ProductApiUtil.deleteProduct(id).then(product =>
     dispatch(removeProduct(product))
   );
