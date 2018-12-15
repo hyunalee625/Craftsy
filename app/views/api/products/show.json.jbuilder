@@ -4,3 +4,9 @@ json.product do
     # json.photoUrl url_for(@product.photo)
   end
 end
+
+json.user do
+  json.set! @product.seller.id do
+    json.extract! @product.seller, :id, :username
+  end
+end

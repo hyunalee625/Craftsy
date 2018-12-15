@@ -13,7 +13,7 @@ const productsReducer = (state = {}, action) => {
     case RECEIVE_ALL_PRODUCTS:
       return action.products;
     case RECEIVE_PRODUCT:
-      newState = merge({}, state, { [action.product.id]: action.product });
+      newState = merge({}, state, action.payload.product);
       return newState;
     case REMOVE_PRODUCT:
       newState = merge({}, state);

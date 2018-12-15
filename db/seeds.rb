@@ -5,10 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 user1 = User.create(username: 'DemoUser', password: 'password', email: 'DemoUser@demo.com')
 
 product1 = Product.create(product_name: 'Product1', description: 'Description1', price: 7.99, user_id: 1)
+
+product1.photo.attach(io: open("https://images.pexels.com/photos/568370/pexels-photo-568370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"), filename: "testing.jpg")
 
 product2 = Product.create(product_name: 'Product2', description: 'Description2', price: 7.99, user_id: 1)
 

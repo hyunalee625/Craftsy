@@ -10,9 +10,9 @@ const receiveAllProducts = products => ({
   products
 });
 
-const receiveProduct = product => ({
+const receiveProduct = payload => ({
   type: RECEIVE_PRODUCT,
-  product
+  payload
 });
 
 const removeProduct = product => ({
@@ -31,8 +31,8 @@ export const fetchProducts = () => dispatch =>
   );
 
 export const fetchProduct = id => dispatch =>
-  ProductApiUtil.fetchProduct(id).then(product =>
-    dispatch(receiveProduct(product))
+  ProductApiUtil.fetchProduct(id).then(payload =>
+    dispatch(receiveProduct(payload))
   );
 
 export const createProduct = product => dispatch =>
