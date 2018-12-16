@@ -94,7 +94,7 @@ class NavBar extends React.Component {
   }
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (
     !event.target.matches(".clickable-user-button") &&
     !event.target.matches(".profile-pic") &&

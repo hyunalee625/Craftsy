@@ -8,15 +8,13 @@ import merge from "lodash/merge";
 
 const productsReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState;
   switch (action.type) {
     case RECEIVE_ALL_PRODUCTS:
-      return action.products;
+      return action.payload.products;
     case RECEIVE_PRODUCT:
-      newState = merge({}, state, action.payload.product);
-      return newState;
+      return merge({}, state, action.payload.product);
     case REMOVE_PRODUCT:
-      newState = merge({}, state);
+      let newState = merge({}, state);
       delete newState[action.productId];
       return newState;
     default:

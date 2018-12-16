@@ -5,7 +5,7 @@ json.product do
   end
 end
 
-json.user do
+json.seller do
   json.set! @product.seller.id do
     json.extract! @product.seller, :id, :username
   end

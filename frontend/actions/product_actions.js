@@ -5,9 +5,9 @@ export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 
-const receiveAllProducts = products => ({
+const receiveAllProducts = payload => ({
   type: RECEIVE_ALL_PRODUCTS,
-  products
+  payload
 });
 
 const receiveProduct = payload => ({
@@ -15,9 +15,9 @@ const receiveProduct = payload => ({
   payload
 });
 
-const removeProduct = product => ({
+const removeProduct = payload => ({
   type: REMOVE_PRODUCT,
-  productId: product.id
+  productId: Object.keys(payload.product)[0]
 });
 
 const receiveProductErrors = errors => ({
@@ -26,8 +26,8 @@ const receiveProductErrors = errors => ({
 });
 
 export const fetchProducts = () => dispatch =>
-  ProductApiUtil.fetchProducts().then(products =>
-    dispatch(receiveAllProducts(products))
+  ProductApiUtil.fetchProducts().then(payload =>
+    dispatch(receiveAllProducts(payload))
   );
 
 export const fetchProduct = id => dispatch =>
@@ -37,17 +37,17 @@ export const fetchProduct = id => dispatch =>
 
 export const createProduct = product => dispatch =>
   ProductApiUtil.createProduct(product).then(
-    product => dispatch(receiveProduct(product)),
+    payload => dispatch(receiveProduct(payload)),
     err => dispatch(receiveProductErrors(err.responseJSON))
   );
 
 export const updateProduct = product => dispatch =>
   ProductApiUtil.updateProduct(product).then(
-    product => dispatch(receiveProduct(product)),
+    payload => dispatch(receiveProduct(payload)),
     err => dispatch(receiveProductErrors(err.responseJSON))
   );
 
 export const deleteProduct = id => dispatch =>
-  ProductApiUtil.deleteProduct(id).then(product =>
-    dispatch(removeProduct(product))
+  ProductApiUtil.deleteProduct(id).then(payload =>
+    dispatch(removeProduct(payload))
   );

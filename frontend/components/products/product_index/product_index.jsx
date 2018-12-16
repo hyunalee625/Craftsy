@@ -7,13 +7,22 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-    const products = this.props.products.map((product, i) => {
-      return <ProductIndexItem key={i} product={product} />;
+    if (!this.props.sellers) return <div />;
+
+    const products = this.props.products.map(product => {
+      return (
+        <ProductIndexItem
+          key={product.id}
+          product={product}
+          sellers={this.props.sellers}
+        />
+      );
     });
 
     return (
-      <div>
-        <ul>{products}</ul>
+      <div className="product-index-container">
+        <h1 className="product-index-title">All Products</h1>
+        <ul className="product-index-items">{products}</ul>
       </div>
     );
   }

@@ -1,28 +1,21 @@
 import { connect } from "react-redux";
 import ProductShow from "./product_show";
-import { fetchProducts, fetchProduct } from "../../../actions/product_actions";
+import { fetchProduct } from "../../../actions/product_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let productId = ownProps.match.params.productId;
   let product = state.entities.products[productId];
-  let seller;
+  let sellerName;
   if (!product) {
-    seller = null;
+    sellerName = null;
   } else {
-    let user = state.entities.users[product.user_id];
-    seller = user.username;
+    sellerName = state.entities.users[product.user_id].username;
   }
-  return {
-    product: product,
-    seller
-  };
+  return { product, sellerName };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchProducts: () => dispatch(fetchProducts()),
-    fetchProduct: id => dispatch(fetchProduct(id))
-  };
+  return { fetchProduct: id => dispatch(fetchProduct(id)) };
 };
 
 export default connect(
