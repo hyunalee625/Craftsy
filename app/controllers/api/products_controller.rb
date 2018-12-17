@@ -36,12 +36,12 @@ class Api::ProductsController < ApplicationController
     if @product.destroy
       render "api/products/show"
     else
-      render json: ["Oops... something went wrong. Try again."], status: 422
+      render json: @product.errors.full_messages, status: 422
     end
   end
 
   private
   def product_params
-    params.require(:product).permit(:product_name, :description, :price, :user_id)
+    params.require(:product).permit(:product_name, :description, :price, :user_id, :photo)
   end
 end

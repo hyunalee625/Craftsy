@@ -14,6 +14,7 @@
 class Product < ApplicationRecord
   validates :product_name, :description, :price, :user_id, presence: true
   validates :product_name, uniqueness: { scope: :user_id }
+  validate :ensure_photo_attached
 
   belongs_to :seller,
     primary_key: :id,
@@ -21,4 +22,10 @@ class Product < ApplicationRecord
     class_name: :User
 
   has_one_attached :photo
+
+  def ensure_photo_attached
+    unless self.photo.attached?
+      errors[:photo] << "must be attached"
+    end
+  end
 end
