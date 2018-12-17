@@ -18,6 +18,15 @@ user6 = User.create(username: 'iSellHomeDecor', password: 'iSellHomeDecor', emai
 user7 = User.create(username: 'iSellKitchenware', password: 'iSellKitchenware', email: 'iSellKitchenware@craftsy.com')
 user8 = User.create(username: 'iSellPlants', password: 'iSellPlants', email: 'iSellPlants@craftsy.com')
 
+user1.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/cute.png"), filename: "cute-emoji.png")
+user2.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/wink.png"), filename: "wink-emoji.png")
+user3.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/cool.png"), filename: "cool-emoji.png")
+user4.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/happy.png"), filename: "happy-emoji.png")
+user5.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/suspicious.png"), filename: "suspicious-emoji.png")
+user6.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/nerd.png"), filename: "nerd-emoji.png")
+user7.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/tongue.png"), filename: "tongue-emoji.png")
+user8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/laughing.png"), filename: "laughing-emoji.png")
+
 #Art
 art1 = Product.create(product_name: 'Golden Waves', description: 'This abstract geometric gold acrylic painting is the perfect center piece to any living space.', price: 299.99, user_id: 1)
 
@@ -46,7 +55,7 @@ art4.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_sc
 art5.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/panda-with-headphones.jpg"), filename: "panda-chillin.jpg")
 art6.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/gold-leaf-waterfalls.jpg"), filename: "gold-leaf-waterfalls.jpg")
 art7.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/abstract.jpg"), filename: "abstraction.jpg")
-art8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/wall-hanging-hoop-art-with-leds.jpg"), filename: "into-the-night")
+art8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/wall-hanging-hoop-art-with-leds.jpg"), filename: "into-the-night.jpg")
 art9.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/wood-wall-hanging.jpg"), filename: "geometric-wood.jpg")
 art10.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544988768/Art/pebble-art.jpg"), filename: "pebble-family.jpg")
 

@@ -1,0 +1,23 @@
+.whole-show-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.show-top-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.first-four-prod-pics {
+  width: 70px;
+  height: 70px;
+}

@@ -10,7 +10,8 @@ end
 json.sellers do
   @products.each do |product|
     json.set! product.seller.id do
-      json.extract! product.seller, :id, :username
+      json.extract! product.seller, :id, :username, :email
+      json.photoUrl url_for(product.seller.photo)
     end
   end
 end

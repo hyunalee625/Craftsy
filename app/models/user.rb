@@ -24,6 +24,8 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Product
 
+  has_one_attached :photo
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil unless user
