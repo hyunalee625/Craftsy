@@ -3,21 +3,247 @@
   flex-direction: column;
   max-width: 1000px;
   margin: auto;
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 .show-top-container {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 50px;
 }
 
 .show-bottom-container {
   display: flex;
   justify-content: space-between;
-  margin: auto;
 }
 
-.first-four-prod-pics {
-  width: 70px;
-  height: 70px;
+.show-top-left-container {
+  display: flex;
+}
+
+.show-profile-pic {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+
+.show-username {
+  color: #222;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.show-username:hover {
+  text-decoration: underline;
+}
+
+.first-four-prod-container {
+  display: flex;
+}
+
+.individual-first-four-prod-pic-container {
+  margin: 3px;
+}
+
+.first-four-prod-pic {
+  width: 64px;
+  height: 64px;
+  padding: 2px;
+  border: 1px solid rgb(206, 205, 205);
+  border-radius: 3px;
+}
+
+.all-other-prod-pic-container {
+  display: flex;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.all-other-prod-pic {
+  width: 100%;
+}
+
+.total-items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3px;
+}
+
+.total-items-number {
+  padding-bottom: 5px;
+}
+
+.show-photo {
+  width: 580px;
+  padding-bottom: 20px;
+}
+
+.show-description-text,
+.show-shipping-text {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.show-description,
+.quantity-text,
+.show-shipping-norm {
+  color: #222;
+  line-height: 1.71429;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-bottom: 24px;
+}
+
+.underline {
+  border-bottom: 1px solid rgb(223, 222, 222);
+}
+
+.reviews-container {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  padding-top: 24px;
+}
+
+.show-name {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.show-price,
+.all-other-prod-price {
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
+.show-bottom-right-container {
+  width: 85%;
+  justify-content: left;
+  padding-left: 30px;
+}
+
+.quantity-selector {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  color: #222;
+  display: block;
+  font-size: 14px;
+  height: 38px;
+  width: 60px;
+}
+
+.buy-it-now-button,
+.add-to-cart-button {
+  display: block;
+  border: 2px solid #222;
+  border-radius: 3px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  text-align: center;
+  line-height: 0;
+  height: 26px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.quantity-div {
+  padding-bottom: 18px;
+}
+
+.buy-it-now-div {
+  padding-bottom: 15px;
+}
+
+.add-to-cart-div {
+  padding-bottom: 35px;
+}
+
+.buy-it-now-button {
+  background: #fff;
+  color: #222;
+}
+
+.add-to-cart-button {
+  background: #222;
+  color: #fff;
+}
+
+.show-shipping-bold {
+  color: #222;
+  line-height: 1.71429;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-bottom: 24px;
+  font-weight: 500;
+}
+
+.show-more-from-seller-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.show-more-seller-info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.show-profile-pic-container {
+  align-self: center;
+}
+
+.all-other-prod-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.all-other-prod-name {
+  color: #222;
+  line-height: 1.71429;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-bottom: 3px;
+  text-overflow: clip;
+}
+
+.link-container {
+  text-decoration: none;
+  color: black;
+}
+
+.entire-other-product {
+  width: 140px;
 }
