@@ -22,7 +22,12 @@ class ProductIndex extends React.Component {
     return (
       <div className="product-index-container">
         <h1 className="product-index-title">All Products</h1>
-        <ul className="product-index-items">{products}</ul>
+        <ul className="product-index-items">
+          {products}
+          <li className="filling-empty-space" />
+          <li className="filling-empty-space" />
+          <li className="filling-empty-space" />
+        </ul>
       </div>
     );
   }

@@ -7,13 +7,17 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    if (!this.props.sellerName) return <div />;
+    const product = this.props.product;
+    const seller = this.props.seller;
+    if (!seller) return <div />;
+
     return (
       <div>
-        <h2>{this.props.product.product_name}</h2>
-        <h2>{this.props.product.description}</h2>
-        <h2>{this.props.product.price}</h2>
-        <h2>{this.props.sellerName}</h2>
+        <img src={product.photoUrl} alt="" />
+        <h2>{product.product_name}</h2>
+        <h2>{product.description}</h2>
+        <h2>{product.price}</h2>
+        <h2>{seller.username}</h2>
         <Link to="/products">Back to all products</Link>
       </div>
     );
