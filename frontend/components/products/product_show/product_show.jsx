@@ -20,12 +20,8 @@ class ProductShow extends React.Component {
 
     const allOtherProducts = () => {
       return filtered.map(otherProd => (
-        <div className="entire-other-product">
-          <Link
-            key={otherProd.id}
-            to={`/products/${otherProd.id}`}
-            className="link-container"
-          >
+        <div key={otherProd.id} className="entire-other-product">
+          <Link key={otherProd.id} to={`/products/${otherProd.id}`} className="link-container">
             <div className="all-other-prod-pic-container">
               <img className="all-other-prod-pic" src={otherProd.photoUrl} />
             </div>
@@ -56,8 +52,10 @@ class ProductShow extends React.Component {
       <div className="whole-show-page">
         <div className="show-top-container">
           <div className="show-top-left-container">
-            <img className="show-profile-pic" src={seller.photoUrl} />
-            <h2 className="show-username">{seller.username}</h2>
+            <Link to={`/users/${seller.id}`}>
+              <img className="show-profile-pic" src={seller.photoUrl} />
+              <h2 className="show-username">{seller.username}</h2>
+            </Link>
           </div>
           <div className="show-top-right-container">
             <div className="first-four-prod-container">
@@ -105,9 +103,7 @@ class ProductShow extends React.Component {
               <h2 className="show-shipping-bold">Ready to ship in 1-3 days</h2>
               <h2 className="show-shipping-norm">From United States</h2>
               <h2 className="show-shipping-norm">Free shipping everywhere</h2>
-              <h2 className="show-shipping-bold">
-                Returns and exchanges accepted
-              </h2>
+              <h2 className="show-shipping-bold">Returns and exchanges accepted</h2>
               <h2 className="show-shipping-norm">Exceptions may apply.</h2>
             </div>
             <div className="underline" />
@@ -118,12 +114,10 @@ class ProductShow extends React.Component {
                 </div>
                 <h2 className="show-username">{seller.username}</h2>
               </div>
-              {/* <div className="show-more-items"> */}
               <div className="all-other-prod-container">
                 {allOtherProducts()}
                 <div className="filling-empty-space" />
               </div>
-              {/* </div> */}
             </div>
           </div>
         </div>

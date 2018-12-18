@@ -13,22 +13,13 @@ class NavBar extends React.Component {
   sessionLinks() {
     return (
       <div className="sessionLinks">
-        <button
-          className="register-button"
-          onClick={() => this.props.openModal("register")}
-        >
+        <button className="register-button" onClick={() => this.props.openModal("register")}>
           Register
         </button>
-        <button
-          className="login-logout-button"
-          onClick={() => this.props.openModal("signIn")}
-        >
+        <button className="login-logout-button" onClick={() => this.props.openModal("signIn")}>
           Sign In
         </button>
-        <button
-          className="login-logout-button"
-          onClick={() => this.props.signInDemo()}
-        >
+        <button className="login-logout-button" onClick={() => this.props.signInDemo()}>
           Demo
         </button>
       </div>
@@ -70,9 +61,7 @@ class NavBar extends React.Component {
   }
 
   greeting() {
-    return this.props.currentUser
-      ? this.loggedInGreeting()
-      : this.sessionLinks();
+    return this.props.currentUser ? this.loggedInGreeting() : this.sessionLinks();
   }
 
   render() {
@@ -86,6 +75,9 @@ class NavBar extends React.Component {
             <Link to="/products" className="all-products-link">
               All Products
             </Link>
+            <Link to="/products/new" className="all-products-link">
+              Create New Product
+            </Link>
           </div>
           <div className="NavBarRight">{this.greeting()}</div>
         </nav>
@@ -94,7 +86,7 @@ class NavBar extends React.Component {
   }
 }
 
-window.onclick = function (event) {
+window.onclick = function(event) {
   if (
     !event.target.matches(".clickable-user-button") &&
     !event.target.matches(".profile-pic") &&
