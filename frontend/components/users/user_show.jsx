@@ -12,13 +12,20 @@ class UserShow extends React.Component {
 
     const allUserProducts = () => {
       return products.map(prod => (
-        <div key={prod.id} className="entire-other-product">
-          <Link key={prod.id} to={`/products/${prod.id}`} className="link-container">
-            <div className="all-other-prod-pic-container">
-              <img className="all-other-prod-pic" src={prod.photoUrl} />
+        <div key={prod.id} className="user-product-container">
+          <Link
+            key={prod.id}
+            to={`/products/${prod.id}`}
+            className="user-product-link-to-show-page"
+          >
+            <div className="user-product-photo-div">
+              <img className="user-product-photo" src={prod.photoUrl} />
             </div>
-            <div className="all-other-prod-name">{prod.product_name}</div>
-            <div className="all-other-prod-price">${prod.price}</div>
+            <div className="user-product-name">{prod.product_name}</div>
+            <div className="user-product-price">${prod.price}</div>
+            <Link className="update-listing-link" to={`/products/${prod.id}/edit`}>
+              Update Product Listing
+            </Link>
           </Link>
         </div>
       ));
@@ -26,7 +33,15 @@ class UserShow extends React.Component {
 
     if (!user || !products) return <div />;
 
-    return <div className="whole-user-show-page">{allUserProducts()}</div>;
+    return (
+      <div className="user-show-page-container">
+        <div className="user-details-container">
+          <img src={user.photoUrl} />
+          <h2 className="header-text">{user.username}</h2>
+        </div>
+        <div className="user-products-container">{allUserProducts()}</div>
+      </div>
+    );
   }
 }
 

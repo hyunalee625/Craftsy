@@ -27,6 +27,17 @@
   cursor: pointer;
 }
 
+.link-to-user-show,
+.show-more-seller-info,
+.total-items-container {
+  text-decoration: none;
+  color: black;
+}
+
+.total-items-container:hover {
+  text-decoration: underline;
+}
+
 .show-username {
   color: #222;
   font-size: 18px;
@@ -237,9 +248,9 @@
   line-height: 1.71429;
   font-size: 14px;
   text-align: left;
+  padding-bottom: 3px;
   word-break: break-word;
   overflow-wrap: break-word;
-  padding-bottom: 3px;
   text-overflow: clip;
 }
 

@@ -8,9 +8,15 @@ class EditProductForm extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.product.id != nextProps.match.params.productId) {
+      this.props.fetchProduct(nextProps.match.params.productId);
+    }
+  }
+
   render() {
     if (!this.props.product.user_id) return <div />;
-    const { action, formType, product, deleteProduct, errors } = this.props;
+    const { action, formType, product, deleteProduct, errors, userId } = this.props;
     return (
       <ProductForm
         action={action}
@@ -18,6 +24,7 @@ class EditProductForm extends React.Component {
         product={product}
         deleteProduct={deleteProduct}
         errors={errors}
+        userId={userId}
       />
     );
   }
@@ -32,6 +39,7 @@ const mapStateToProps = (state, ownProps) => {
     photoFile: null,
     photoUrl: null
   };
+
   const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
 
   return {

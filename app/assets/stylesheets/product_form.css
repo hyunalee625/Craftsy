@@ -1,0 +1,132 @@
+.product-form-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  max-width: 1000px;
+  padding-top: 100px;
+}
+
+.entire-product-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 3px;
+  background-color: #f8f8f8;
+}
+
+.photo-preview-container {
+  width: 420px;
+  height: 420px;
+}
+
+.photo-preview {
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid rgb(117, 117, 117);
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.label-text {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.product-name-input-field,
+.price-input-field,
+.product-input-field {
+  display: block;
+  width: 88%;
+  padding-top: 3px;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 3px;
+  font-size: 12px;
+  padding-left: 7px;
+  color: #f45800;
+}
+
+.left-side-form {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.right-side-form {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cancel-button,
+.delete-product-button,
+.submit-button {
+  border: 1px solid #222;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+  line-height: 0;
+  height: 24px;
+  font-size: 14px;
+  width: 140px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cancel-button {
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+.submit-button {
+  display: inline;
+  background-color: black;
+  color: white;
+}
+
+.delete-product-button {
+  display: inline;
+  background-color: white;
+  color: black;
+}
+
+.submit-delete-button-div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 90%;
+}
+
+.cancel-button-div {
+  padding-bottom: 10px;
+}
+
+.cancel-text {
+  padding-top: 6px;
+}
+
+.upload-photo-button {
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.upload-photo-button:hover {
+  cursor: pointer;
+}
+
+.upload-photo-button-div {
+  padding-top: 18px;
+  margin: auto;
+}

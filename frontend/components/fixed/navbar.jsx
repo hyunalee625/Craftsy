@@ -47,6 +47,11 @@ class NavBar extends React.Component {
 
         <div id="user-dropdown-container" className="user-dropdown-content">
           <ul>
+            <li>
+              <Link className="your-listings" to={`/users/${this.props.currentUser.id}`}>
+                Product listings
+              </Link>
+            </li>
             <li>Favorites (Coming soon...)</li>
             <li>Conversations (Coming soon...)</li>
             <li>Purchases and reviews (Coming soon...)</li>

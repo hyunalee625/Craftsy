@@ -26,19 +26,17 @@ const receiveProductErrors = errors => ({
 });
 
 export const fetchProducts = () => dispatch =>
-  ProductApiUtil.fetchProducts().then(payload =>
-    dispatch(receiveAllProducts(payload))
-  );
+  ProductApiUtil.fetchProducts().then(payload => dispatch(receiveAllProducts(payload)));
 
 export const fetchProduct = id => dispatch =>
-  ProductApiUtil.fetchProduct(id).then(payload =>
-    dispatch(receiveProduct(payload))
-  );
+  ProductApiUtil.fetchProduct(id).then(payload => dispatch(receiveProduct(payload)));
 
 export const createProduct = product => dispatch =>
   ProductApiUtil.createProduct(product).then(
     payload => dispatch(receiveProduct(payload)),
-    err => dispatch(receiveProductErrors(err.responseJSON))
+    err => {
+      dispatch(receiveProductErrors(err.responseJSON));
+    }
   );
 
 export const updateProduct = product => dispatch =>
@@ -48,6 +46,4 @@ export const updateProduct = product => dispatch =>
   );
 
 export const deleteProduct = id => dispatch =>
-  ProductApiUtil.deleteProduct(id).then(payload =>
-    dispatch(removeProduct(payload))
-  );
+  ProductApiUtil.deleteProduct(id).then(payload => dispatch(removeProduct(payload)));

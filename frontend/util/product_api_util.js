@@ -10,11 +10,11 @@ export const fetchProduct = id =>
     url: `api/products/${id}`
   });
 
-export const createProduct = product =>
+export const createProduct = formData =>
   $.ajax({
     method: "post",
     url: "api/products",
-    data: { product },
+    data: formData,
     contentType: false,
     processData: false
   });

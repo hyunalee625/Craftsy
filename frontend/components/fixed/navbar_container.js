@@ -3,9 +3,11 @@ import { signIn, logout } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
 import NavBar from "./navbar";
 
-const mapStateToProps = ({ session, entities: { users } }) => ({
-  currentUser: users[session.id]
-});
+const mapStateToProps = ({ session, entities: { users } }) => {
+  return {
+    currentUser: users[session.id]
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   const demoUser = { username: "DemoUser", password: "password" };

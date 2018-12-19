@@ -16,10 +16,10 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/products" component={ProductIndexContainer} />
-      <Route exact path="/products/:productId" component={ProductShowContainer} />
-      <Route exact path="/users/:userId" component={UserShowContainer} />
       <Route exact path="/products/new" component={CreateProductFormContainer} />
+      <Route exact path="/products/:productId" component={ProductShowContainer} />
       <Route exact path="/products/:productId/edit" component={EditProductFormContainer} />
+      <Route exact path="/users/:userId" component={UserShowContainer} />
       <Route exact path="/" />
       <Redirect to="/" />
     </Switch>

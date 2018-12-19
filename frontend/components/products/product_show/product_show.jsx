@@ -5,6 +5,7 @@ class ProductShow extends React.Component {
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchProducts();
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -52,7 +53,7 @@ class ProductShow extends React.Component {
       <div className="whole-show-page">
         <div className="show-top-container">
           <div className="show-top-left-container">
-            <Link to={`/users/${seller.id}`}>
+            <Link className="link-to-user-show" to={`/users/${seller.id}`}>
               <img className="show-profile-pic" src={seller.photoUrl} />
               <h2 className="show-username">{seller.username}</h2>
             </Link>
@@ -60,10 +61,13 @@ class ProductShow extends React.Component {
           <div className="show-top-right-container">
             <div className="first-four-prod-container">
               <h2>{firstFourProducts()}</h2>
-              <h2 className="first-four-prod-pic total-items-container">
+              <Link
+                className="first-four-prod-pic total-items-container"
+                to={`/users/${seller.id}`}
+              >
                 <div className="total-items-number">{totalItems}</div>
                 <div>items</div>
-              </h2>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,12 +112,12 @@ class ProductShow extends React.Component {
             </div>
             <div className="underline" />
             <div className="show-more-from-seller-container">
-              <div className="show-more-seller-info">
+              <Link className="show-more-seller-info" to={`/users/${seller.id}`}>
                 <div className="show-profile-pic-container">
                   <img className="show-profile-pic" src={seller.photoUrl} />
                 </div>
                 <h2 className="show-username">{seller.username}</h2>
-              </div>
+              </Link>
               <div className="all-other-prod-container">
                 {allOtherProducts()}
                 <div className="filling-empty-space" />

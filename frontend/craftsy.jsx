@@ -5,12 +5,12 @@ import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
-  if (window.currentUser) {
+  if (window.currentUser.user) {
     const preloadedState = {
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: window.currentUser.user
       },
-      session: { id: window.currentUser.id }
+      session: { id: Object.keys(window.currentUser.user)[0] }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
