@@ -14,3 +14,12 @@ json.products do
     end
   end
 end
+
+json.sellers do
+  @shopping_cart_items.each do |cart_item|
+    json.set! cart_item.product.seller.id do
+      json.extract! cart_item.product.seller, :id, :username, :email
+      json.photoUrl url_for(cart_item.product.seller.photo)
+    end
+  end
+end
