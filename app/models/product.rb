@@ -22,6 +22,8 @@ class Product < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
+  has_many :shopping_cart_items, dependent: :destroy
+
   has_one_attached :photo
 
   def ensure_photo_attached
