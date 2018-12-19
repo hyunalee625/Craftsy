@@ -1,6 +1,6 @@
 import * as CartItemApiUtil from "../util/cart_item_api_util";
 
-export const RECEIVE_ALL_CART_ITEMS = "RECEIVE_CART_ITEMS";
+export const RECEIVE_ALL_CART_ITEMS = "RECEIVE_ALL_CART_ITEMS";
 export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
@@ -14,9 +14,9 @@ const receiveCartItem = payload => ({
   payload
 });
 
-const removeCartItem = payload => ({
+const removeCartItem = cartItem => ({
   type: REMOVE_CART_ITEM,
-  cartItemId: Object.keys(payload.cartItems)[0] //TODO: double-check in console what payload carries
+  cartItemId: cartItem.id
 });
 
 export const fetchCartItems = () => dispatch =>
@@ -29,4 +29,4 @@ export const updateCartItem = cartItem => dispatch =>
   CartItemApiUtil.updateCartItem(cartItem).then(payload => dispatch(receiveCartItem(payload)));
 
 export const deleteCartItem = id => dispatch =>
-  CartItemApiUtil.deleteCartItem(id).then(payload => dispatch(removeCartItem(payload)));
+  CartItemApiUtil.deleteCartItem(id).then(cartItem => dispatch(removeCartItem(cartItem)));

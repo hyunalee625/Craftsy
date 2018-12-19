@@ -1,8 +1,9 @@
-export const fetchCartItems = () =>
-  $.ajax({
+export const fetchCartItems = () => {
+  return $.ajax({
     method: "get",
     url: "api/shopping_cart_items"
   });
+};
 
 export const createCartItem = cartItem =>
   $.ajax({

@@ -21,7 +21,7 @@ class CartIndexItem extends React.Component {
           <img src={seller.photoUrl} className="cart-seller-photo" />
           <span>{seller.username}</span>
         </Link>
-        <Link to={`/products/${item.product_id}`}>
+        <Link to={`/products/${product.id}`}>
           <ul>
             <img src={product.photoUrl} className="cart-product-photo" />
             <li>{product.product_name}</li>
@@ -32,7 +32,7 @@ class CartIndexItem extends React.Component {
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <div>{productSubtotal}</div>
+        <div>Total: {this.productSubtotal()}</div>
       </div>
     );
   }

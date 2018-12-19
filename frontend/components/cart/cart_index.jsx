@@ -7,21 +7,14 @@ class CartIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.items || !this.props.products || !this.props.sellers)
-      return <div />;
+    debugger;
+    if (!this.props.items || !this.props.products || !this.props.sellers) return null;
 
     const cartItems = this.props.items.map(item => {
       const product = this.props.products[item.product_id];
       const seller = this.props.sellers[product.user_id];
 
-      return (
-        <CartIndexItem
-          key={item.id}
-          item={item}
-          product={product}
-          seller={seller}
-        />
-      );
+      return <CartIndexItem key={item.id} item={item} product={product} seller={seller} />;
     });
 
     return (

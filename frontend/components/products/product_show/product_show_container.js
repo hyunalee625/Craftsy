@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import ProductShow from "./product_show";
 import { fetchProduct, fetchProducts } from "../../../actions/product_actions";
+import { createCartItem } from "../../../actions/cart_item_actions";
+import { openModal } from "../../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let productId = ownProps.match.params.productId;
@@ -15,14 +17,17 @@ const mapStateToProps = (state, ownProps) => {
   return {
     products,
     product,
-    seller
+    seller,
+    currentUserId: state.session.id
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchProduct: id => dispatch(fetchProduct(id)),
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: () => dispatch(fetchProducts()),
+    createCartItem: cartItem => dispatch(createCartItem(cartItem)),
+    openSignInModal: () => dispatch(openModal("signIn"))
   };
 };
 

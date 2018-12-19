@@ -2,10 +2,58 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 class ProductShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addToCart = this.addToCart.bind(this);
+    this.state = {
+      product_id: null,
+      user_id: null,
+      quantity: null
+    };
+  }
+
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
     this.props.fetchProducts();
     window.scrollTo(0, 0);
+  }
+
+  quantitySelector() {
+    const options = [];
+    for (let i = 1; i < 6; i++) {
+      options.push(<option key={i} value={i}>{`${i}`}</option>);
+    }
+
+    return (
+      <select
+        name="quantity"
+        defaultValue="Select Quantity"
+        className="quantity-selector"
+        onChange={e =>
+          this.setState({ quantity: parseInt(e.target.value), product_id: this.props.product.id })
+        }
+      >
+        <option disabled={true} value={"Select Quantity"}>
+          {"Select Quantity"}
+        </option>
+        {options}
+      </select>
+    );
+  }
+
+  addToCart(e) {
+    e.preventDefault();
+    if (!this.props.currentUserId) {
+      this.props.openSignInModal();
+    } else {
+      if (this.state.quantity) {
+        this.state.user_id = this.props.currentUserId;
+        this.props.createCartItem(this.state);
+        window.alert("Item has been added to cart.");
+      } else {
+        window.alert("Please select a quantity.");
+      }
+    }
   }
 
   render() {
@@ -84,22 +132,19 @@ class ProductShow extends React.Component {
             <h2 className="show-name">{product.product_name}</h2>
             <h2 className="show-price">${product.price}</h2>
             <div className="quantity-text">Quantity</div>
-            <div className="quantity-div">
-              <select name="quantity" className="quantity-selector">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+            <div className="quantity-div">{this.quantitySelector()}</div>
             <div className="buy-it-now-div">
               <button className="buy-it-now-button">
                 <p className="buy-it-now-text">Buy it now</p>
               </button>
             </div>
             <div className="add-to-cart-div">
-              <button className="add-to-cart-button">
-                <p className="add-to-cart-text">Add to cart</p>
-              </button>
+              <input
+                type="submit"
+                className="add-to-cart-button"
+                value="Add To Cart"
+                onClick={e => this.addToCart(e)}
+              />
             </div>
             <div className="underline" />
             <div className="shipping-container">

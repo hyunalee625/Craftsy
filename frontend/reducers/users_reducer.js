@@ -2,6 +2,7 @@ import merge from "lodash/merge";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT } from "../actions/product_actions";
+import { RECEIVE_ALL_CART_ITEMS } from "../actions/cart_item_actions";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +15,8 @@ const usersReducer = (state = {}, action) => {
       return action.payload.sellers;
     case RECEIVE_PRODUCT:
       return merge({}, state, action.payload.seller);
+    case RECEIVE_ALL_CART_ITEMS:
+      return action.payload.sellers;
     default:
       return state;
   }

@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import CartIndex from "./cart_index";
-import { fetchCartItems } from "../../../actions/cart_item_actions";
+import { fetchCartItems } from "../../actions/cart_item_actions";
 
 const mapStateToProps = state => {
   return {
-    items: Object.values(state.entities.items),
-    products: Object.values(state.entities.products),
-    sellers: Object.values(state.entities.users)
+    items: Object.values(state.entities.cart),
+    products: state.entities.products,
+    sellers: state.entities.users
   };
 };
 
