@@ -18,8 +18,8 @@ export const updateCartItem = cartItem =>
     data: { cartItem }
   });
 
-export const deleteCartItem = id =>
+export const deleteCartItem = cartItemId =>
   $.ajax({
     method: "delete",
-    url: `api/shopping_cart_items/${id}`
+    url: `api/shopping_cart_items/${cartItemId}`
   });
