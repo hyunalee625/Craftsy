@@ -12,8 +12,16 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
 
+  let currentUserId;
+  if (state.session.id) {
+    currentUserId = state.entities.users[state.session.id].id;
+  } else {
+    currentUserId = null;
+  }
+
   return {
     user,
+    currentUserId,
     userProducts
   };
 };

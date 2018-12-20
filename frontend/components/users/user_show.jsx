@@ -6,6 +6,17 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
+  yourShopOrNot() {
+    if (this.props.user.id === this.props.currentUserId) {
+      return (
+        <Link to="/products/new" className="create-new-product-button">
+          + New Listing
+        </Link>
+      );
+    }
+    return <div />;
+  }
+
   render() {
     const user = this.props.user;
     const products = this.props.userProducts;
@@ -23,9 +34,9 @@ class UserShow extends React.Component {
             </div>
             <div className="user-product-name">{prod.product_name}</div>
             <div className="user-product-price">${prod.price}</div>
-            <Link className="update-listing-link" to={`/products/${prod.id}/edit`}>
-              Update Product Listing
-            </Link>
+          </Link>
+          <Link className="update-listing-link" to={`/products/${prod.id}/edit`}>
+            Update Product Listing
           </Link>
         </div>
       ));
@@ -39,7 +50,13 @@ class UserShow extends React.Component {
           <img src={user.photoUrl} />
           <h2 className="header-text">{user.username}</h2>
         </div>
-        <div className="user-products-container">{allUserProducts()}</div>
+        <div className="create-product-container">{this.yourShopOrNot()}</div>
+        <div className="user-products-container">
+          {allUserProducts()}
+          <div className="empty-space-user-show" />
+          <div className="empty-space-user-show" />
+          <div className="empty-space-user-show" />
+        </div>
       </div>
     );
   }

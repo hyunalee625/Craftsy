@@ -1,0 +1,61 @@
+.footer {
+  border-top: 1px solid #e1e3df;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #fff;
+  max-width: 1402px;
+  padding-top: 20px;
+}
+
+.footer-left {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+}
+
+.footer-right {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+}
+
+.footer-right-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.footer-title {
+  color: #f56400;
+  text-decoration: none;
+  font-size: 28px;
+  font-family: "Noto Serif SC", serif;
+  padding-right: 20px;
+}
+
+.footer-slogan {
+  font-size: 12px;
+  color: #666666;
+}
+
+.footer-personal-project {
+  font-style: italic;
+}
+
+.footer-name {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 35px;
+}
+
+.github-icon,
+.linkedin-icon {
+  width: 32px;
+  height: 32px;
+  padding-left: 25px;
+}
+
+.linkedin-icon {
+  padding-right: 20px;
+}

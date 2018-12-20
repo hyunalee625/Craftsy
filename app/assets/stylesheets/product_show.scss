@@ -106,8 +106,8 @@
 }
 
 .show-description,
-.quantity-text,
-.show-shipping-norm {
+.show-shipping-norm,
+.no-reviews {
   color: #222;
   line-height: 1.71429;
   font-size: 14px;
@@ -115,6 +115,16 @@
   word-break: break-word;
   overflow-wrap: break-word;
   padding-bottom: 24px;
+}
+
+.quantity-text {
+  color: #222;
+  line-height: 1.71429;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding-bottom: 5px;
 }
 
 .underline {
@@ -168,10 +178,9 @@
   display: block;
   font-size: 14px;
   height: 38px;
-  width: 60px;
+  width: 50px;
 }
 
-.buy-it-now-button,
 .add-to-cart-button {
   display: block;
   border: 2px solid #222;
@@ -184,28 +193,17 @@
   font-size: 16px;
   width: 100%;
   cursor: pointer;
+  background: #222;
+  color: #fff;
 }
 
 .quantity-div {
   padding-bottom: 18px;
 }
 
-.buy-it-now-div {
-  padding-bottom: 15px;
-}
-
 .add-to-cart-div {
+  padding-top: 10px;
   padding-bottom: 35px;
-}
-
-.buy-it-now-button {
-  background: #fff;
-  color: #222;
-}
-
-.add-to-cart-button {
-  background: #222;
-  color: #fff;
 }
 
 .show-shipping-bold {

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartIcon from "./navbar_cart_icon";
+import ShopIcon from "./navbar_shop_icon";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -32,34 +34,31 @@ class NavBar extends React.Component {
 
   loggedInGreeting() {
     return (
-      <div className="entire-user-dropdown">
-        <button className="clickable-user-button" onClick={this.dropDown}>
-          <img
-            className="profile-pic"
-            src={window.defaultProfilePicURL}
-            alt="default profile pic"
-          />
-          <div className="YOU-container">
-            <h3 className="YOU-text">You</h3>
-            <h3 className="YOU-triangle">&#9660;</h3>
-          </div>
-        </button>
+      <div className="entire-greeting-container">
+        <Link to={`/users/${this.props.currentUser.id}`} className="shop-icon-container">
+          <ShopIcon className="shop-icon" />
+          <p className="icon-text">Shop Manager</p>
+        </Link>
+        <div className="entire-user-dropdown">
+          <button className="clickable-user-button" onClick={this.dropDown}>
+            <img
+              className="profile-pic"
+              src={this.props.currentUser.photoUrl}
+              alt="default profile pic"
+            />
+            <div className="YOU-container">
+              <h3 className="YOU-text">You</h3>
+              <h3 className="YOU-triangle">&#9660;</h3>
+            </div>
+          </button>
 
-        <div id="user-dropdown-container" className="user-dropdown-content">
-          <ul>
-            <li>
-              <Link className="your-listings" to={`/users/${this.props.currentUser.id}`}>
-                Product listings
-              </Link>
-            </li>
-            <li>Favorites (Coming soon...)</li>
-            <li>Conversations (Coming soon...)</li>
-            <li>Purchases and reviews (Coming soon...)</li>
-            <li>Account settings (Coming soon...)</li>
-            <li className="logout-button-text" onClick={this.props.logout}>
-              Sign Out
-            </li>
-          </ul>
+          <div id="user-dropdown-container" className="user-dropdown-content">
+            <ul>
+              <li className="logout-button-text" onClick={this.props.logout}>
+                Sign Out
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -80,11 +79,14 @@ class NavBar extends React.Component {
             <Link to="/products" className="all-products-link">
               All Products
             </Link>
-            <Link to="/products/new" className="all-products-link">
-              Create New Product
+          </div>
+          <div className="NavBarRight">
+            {this.greeting()}
+            <Link to="/cart" className="cart-icon-container">
+              <CartIcon />
+              <p className="icon-text">Cart</p>
             </Link>
           </div>
-          <div className="NavBarRight">{this.greeting()}</div>
         </nav>
       </div>
     );

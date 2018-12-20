@@ -7,9 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <script type="text/javascript">
-      window.defaultProfilePicURL = "<%= image_url('DefaultProfilePic.png') %>"
+      window.defaultProfilePicUrl = "<%= image_url('defaultprofilepic.png') %>"
+      window.githubIconURL = "<%= image_url('github.png') %>"
+      window.linkedinIconURL = "<%= image_url('linkedin.png') %>"
     </script>    
   </head>
 

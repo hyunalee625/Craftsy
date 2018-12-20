@@ -19,7 +19,11 @@ const productsReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return merge({}, state, action.payload.products);
     case RECEIVE_ALL_CART_ITEMS:
-      return action.payload.products;
+      if (!action.payload.products) {
+        return state;
+      } else {
+        return action.payload.products;
+      }
     default:
       return state;
   }

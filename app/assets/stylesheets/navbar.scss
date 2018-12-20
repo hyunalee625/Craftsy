@@ -55,7 +55,7 @@
   color: white;
 }
 
-.user-dropdown {
+.entire-user-dropdown {
   position: relative;
   display: inline-block;
 }
@@ -67,8 +67,8 @@
   min-width: 260px;
   padding: 10px 16px;
   z-index: 1;
-  right: 115px;
-  top: 80px;
+  right: -50px;
+  top: 60px;
   border: 1px solid #e1e3df;
 }
 
@@ -97,7 +97,6 @@
 }
 
 .profile-pic {
-  border-radius: 50%;
   position: relative;
   display: block;
   float: none;
@@ -105,7 +104,6 @@
   height: 24px;
   margin: 3px auto;
   top: 1px;
-  border: 1px solid #b9b9b9;
 }
 
 .user-dropdown-content ul li {
@@ -113,14 +111,68 @@
   padding: 10px;
 }
 
-.logout-button-text {
-  border-top: 1px solid #b9b9b9;
-}
-
 .user-dropdown-content ul li:hover {
   background: #eeeeee;
+  cursor: pointer;
 }
 
 .your-listings {
   color: black;
+}
+
+.NavBarRight,
+.entire-greeting-container {
+  display: flex;
+}
+
+.shop-icon {
+  fill: #666666;
+  padding-bottom: 3px;
+}
+
+.cart-icon {
+  fill: #666666;
+  padding-bottom: 3px;
+}
+
+.icon-text {
+  font-size: 12px;
+  color: #666666;
+  text-decoration: none;
+}
+
+.shop-icon-container,
+.cart-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.shop-icon-container:hover {
+  .shop-icon {
+    fill: black;
+  }
+  .icon-text {
+    color: black;
+  }
+}
+
+.cart-icon-container:hover {
+  .cart-icon {
+    fill: black;
+  }
+  .icon-text {
+    color: black;
+  }
+}
+
+.shop-icon-container {
+  padding-right: 20px;
+}
+
+.cart-icon-container {
+  padding-left: 20px;
 }

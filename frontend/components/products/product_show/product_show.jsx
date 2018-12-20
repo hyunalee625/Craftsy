@@ -20,21 +20,21 @@ class ProductShow extends React.Component {
 
   quantitySelector() {
     const options = [];
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 9; i++) {
       options.push(<option key={i} value={i}>{`${i}`}</option>);
     }
 
     return (
       <select
         name="quantity"
-        defaultValue="Select Quantity"
+        defaultValue="-"
         className="quantity-selector"
         onChange={e =>
           this.setState({ quantity: parseInt(e.target.value), product_id: this.props.product.id })
         }
       >
-        <option disabled={true} value={"Select Quantity"}>
-          {"Select Quantity"}
+        <option disabled={true} value={"-"}>
+          {"-"}
         </option>
         {options}
       </select>
@@ -127,17 +127,13 @@ class ProductShow extends React.Component {
             <h2 className="show-description">{product.description}</h2>
             <div className="underline" />
             <div className="reviews-container">Reviews</div>
+            <div className="no-reviews">No reviews for this item yet.</div>
           </div>
           <div className="show-bottom-right-container">
             <h2 className="show-name">{product.product_name}</h2>
             <h2 className="show-price">${product.price}</h2>
             <div className="quantity-text">Quantity</div>
             <div className="quantity-div">{this.quantitySelector()}</div>
-            <div className="buy-it-now-div">
-              <button className="buy-it-now-button">
-                <p className="buy-it-now-text">Buy it now</p>
-              </button>
-            </div>
             <div className="add-to-cart-div">
               <input
                 type="submit"

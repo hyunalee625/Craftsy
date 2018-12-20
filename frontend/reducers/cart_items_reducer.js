@@ -11,7 +11,11 @@ const cartItemsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_CART_ITEMS:
-      return action.payload.cartItems;
+      if (!action.payload.cartItems) {
+        return state;
+      } else {
+        return action.payload.cartItems;
+      }
     case RECEIVE_CART_ITEM:
       newState = merge({}, state, action.payload.cartItem);
       return newState;
