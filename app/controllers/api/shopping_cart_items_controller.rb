@@ -6,8 +6,15 @@ class Api::ShoppingCartItemsController < ApplicationController
   end
 
   def create
-    @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
+    # debugger;
+    @shopping_cart_item = ShoppingCartItem.find_by(user_id: params[:cartItem][:user_id], product_id: params[:cartItem][:product_id])
 
+    if @shopping_cart_item
+      @shopping_cart_item.quantity = @shopping_cart_item.quantity.to_i + params[:cartItem][:quantity].to_i
+    else
+      @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
+    end
+  
     if @shopping_cart_item.save
       render "api/shopping_cart_items/show"
     else
@@ -28,7 +35,7 @@ class Api::ShoppingCartItemsController < ApplicationController
     @shopping_cart_item = ShoppingCartItem.find(params[:id])
 
     if @shopping_cart_item.update(shopping_cart_item_params)
-      render 'api/shopping_cart_items/index'
+      render 'api/shopping_cart_items/show'
     else
       render json: @shopping_cart_item.errors.full_messages, status: 422
     end

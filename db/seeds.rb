@@ -18,7 +18,7 @@ user6 = User.create(username: 'iSellHomeDecor', password: 'iSellHomeDecor', emai
 user7 = User.create(username: 'iSellKitchenware', password: 'iSellKitchenware', email: 'iSellKitchenware@craftsy.com')
 user8 = User.create(username: 'iSellPlants', password: 'iSellPlants', email: 'iSellPlants@craftsy.com')
 
-user1.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/cute.png"), filename: "cute-emoji.png")
+user1.photo.attach(io: File.open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/cute.png"), filename: "cute-emoji.png")
 user2.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/wink.png"), filename: "wink-emoji.png")
 user3.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/cool.png"), filename: "cool-emoji.png")
 user4.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/happy.png"), filename: "happy-emoji.png")

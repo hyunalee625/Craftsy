@@ -5,6 +5,7 @@ class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.item;
+    this.handleChange = this.handleChange.bind(this);
   }
 
   productSubtotal() {
@@ -24,10 +25,16 @@ class CartIndexItem extends React.Component {
         name="quantity"
         defaultValue={this.props.item.quantity}
         className="quantity-selector"
-        onChange={e => this.setState({ quantity: parseInt(e.target.value) })}
+        onChange={this.handleChange}
       >
         {options}
       </select>
+    );
+  }
+
+  handleChange(e) {
+    this.setState({ quantity: parseInt(e.target.value) }, () =>
+      this.props.updateCartItem(this.state)
     );
   }
 

@@ -114,7 +114,7 @@ class ProductShow extends React.Component {
                 to={`/users/${seller.id}`}
               >
                 <div className="total-items-number">{totalItems}</div>
-                <div>items</div>
+                <div>item(s)</div>
               </Link>
             </div>
           </div>

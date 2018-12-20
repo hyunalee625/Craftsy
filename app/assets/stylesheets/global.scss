@@ -1,10 +1,15 @@
-$orange: #E55400;
-$lightgrey: #E5E4E2;
-$superlightgrey: #F8FBF7;
-$lightorange: #FFD5CB;
+$orange: #e55400;
+$lightgrey: #e5e4e2;
+$superlightgrey: #f8fbf7;
+$lightorange: #ffd5cb;
 $darkgrey: #495057;
-$orangehover: #FC7042;
+$orangehover: #fc7042;
 
 html {
-  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-family: "Graphik Webfont", -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica", Arial, sans-serif;
+}
+
+.main-content {
+  min-height: calc(100vh - 180px);
 }

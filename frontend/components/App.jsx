@@ -12,12 +12,12 @@ import CartIndexContainer from "./cart/cart_index_container";
 import { ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-  <div>
+  <div className="whole-page">
     <Modal />
     <header>
       <NavBarContainer />
     </header>
-    <div>
+    <div className="main-content">
       <Switch>
         <ProtectedRoute exact path="/cart" component={CartIndexContainer} />
         <Route exact path="/products" component={ProductIndexContainer} />
