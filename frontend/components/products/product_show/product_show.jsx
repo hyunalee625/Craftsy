@@ -6,8 +6,8 @@ class ProductShow extends React.Component {
     super(props);
     this.addToCart = this.addToCart.bind(this);
     this.state = {
-      product_id: null,
-      user_id: null,
+      product_id: this.props.match.params.productId,
+      user_id: this.props.currentUserId,
       quantity: null
     };
   }
@@ -18,9 +18,16 @@ class ProductShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.productId != prevProps.match.params.productId) {
+      this.props.fetchProduct(this.props.match.params.productId);
+      this.setState({ quantity: null });
+    }
+  }
+
   quantitySelector() {
     const options = [];
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i <= 10; i++) {
       options.push(<option key={i} value={i}>{`${i}`}</option>);
     }
 
@@ -33,7 +40,7 @@ class ProductShow extends React.Component {
           this.setState({ quantity: parseInt(e.target.value), product_id: this.props.product.id })
         }
       >
-        <option disabled={true} value={"-"}>
+        <option key="0" selected={this.state.quantity === null} disabled={true} value={"-"}>
           {"-"}
         </option>
         {options}
@@ -49,7 +56,6 @@ class ProductShow extends React.Component {
       if (this.state.quantity) {
         this.state.user_id = this.props.currentUserId;
         this.props.createCartItem(this.state);
-        window.alert("Item has been added to cart.");
       } else {
         window.alert("Please select a quantity.");
       }
@@ -57,6 +63,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
+    // debugger;
     const product = this.props.product;
     const seller = this.props.seller;
     const products = this.props.products;

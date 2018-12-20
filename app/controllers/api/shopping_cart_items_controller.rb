@@ -11,6 +11,9 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     if @shopping_cart_item
       @shopping_cart_item.quantity = @shopping_cart_item.quantity.to_i + params[:cartItem][:quantity].to_i
+      if @shopping_cart_item.quantity > 10
+        @shopping_cart_item.quantity = 10
+      end
     else
       @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
     end

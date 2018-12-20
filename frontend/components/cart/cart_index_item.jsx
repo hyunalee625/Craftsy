@@ -11,12 +11,15 @@ class CartIndexItem extends React.Component {
   productSubtotal() {
     const quantity = this.props.item.quantity;
     const price = this.props.product.price;
-    return price * quantity;
+    return (price * quantity).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
   }
 
   quantitySelector() {
     const options = [];
-    for (let i = 1; i < 9; i++) {
+    for (let i = 1; i <= 10; i++) {
       options.push(<option key={i} value={i}>{`${i}`}</option>);
     }
 
@@ -67,7 +70,7 @@ class CartIndexItem extends React.Component {
           Remove Item
         </button>
         <div className="quantity-div">{this.quantitySelector()}</div>
-        <div>Total: {this.productSubtotal()}</div>
+        <div>Total: ${this.productSubtotal()}</div>
       </div>
     );
   }

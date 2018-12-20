@@ -27,8 +27,32 @@ const Protected = ({ component: Component, path, loggedIn, exact, openSignInModa
   />
 );
 
+const OwnerOnly = ({ component: Component, path, loggedIn, exact }) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={props => {
+      if (loggedIn) {
+        return <Component {...props} />;
+      } else {
+        openSignInModal();
+        return <MustBeSignedIn />;
+      }
+    }}
+  />
+);
+
+// const isOwner = (state, productId) => {
+//   if (!state.session.currentUser) return false;
+
+//   return state.session.currentUser.productIds.includes(productId);
+// };
+
 const mapStateToProps = state => {
-  return { loggedIn: Boolean(state.session.id) };
+  return {
+    loggedIn: Boolean(state.session.id)
+    // isOwner: isOwner(state, ownProps.computedMatch.params.productId)
+  };
 };
 
 const mapDispatchToProps = dispatch => {

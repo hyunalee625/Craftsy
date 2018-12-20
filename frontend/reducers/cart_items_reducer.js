@@ -3,6 +3,7 @@ import {
   RECEIVE_CART_ITEM,
   REMOVE_CART_ITEM
 } from "../actions/cart_item_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 import merge from "lodash/merge";
 
@@ -23,6 +24,8 @@ const cartItemsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.cartItemId];
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }

@@ -12,6 +12,18 @@ class NavBar extends React.Component {
     this.dropDown = this.dropDown.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.currentUser) {
+      this.props.fetchCartItems();
+    }
+  }
+
+  componentDidUpdate(oldProps) {
+    if (this.props.currentUser && !oldProps.currentUser) {
+      this.props.fetchCartItems();
+    }
+  }
+
   sessionLinks() {
     return (
       <div className="sessionLinks">
@@ -68,6 +80,14 @@ class NavBar extends React.Component {
     return this.props.currentUser ? this.loggedInGreeting() : this.sessionLinks();
   }
 
+  itemCount() {
+    if (this.props.cartItemCount === 0) {
+      return <div />;
+    } else {
+      return <div className="cart-item-count">{this.props.cartItemCount}</div>;
+    }
+  }
+
   render() {
     return (
       <div className="NavBarContainer">
@@ -83,6 +103,7 @@ class NavBar extends React.Component {
           <div className="NavBarRight">
             {this.greeting()}
             <Link to="/cart" className="cart-icon-container">
+              {this.itemCount()}
               <CartIcon />
               <p className="icon-text">Cart</p>
             </Link>
