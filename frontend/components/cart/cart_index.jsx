@@ -24,12 +24,14 @@ class CartIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.items || !this.props.products || !this.props.sellers) return null;
+    if (!this.props.items || !this.props.products || Object.values(this.props.sellers).length === 0)
+      return null;
+
+    const { products, sellers, buyer } = this.props;
 
     const cartItems = this.props.items.map(item => {
-      const product = this.props.products[item.product_id];
-      const seller = this.props.sellers[product.user_id];
-      const buyer = this.props.buyer;
+      const product = products[item.product_id];
+      const seller = sellers[product.user_id];
       const fetchCartItems = () => this.props.fetchCartItems();
       const updateCartItem = item => this.props.updateCartItem(item);
       const deleteCartItem = id => this.props.deleteCartItem(id);

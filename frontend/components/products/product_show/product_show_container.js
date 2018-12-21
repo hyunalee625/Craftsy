@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   let products = Object.values(state.entities.products);
   let seller;
   if (!product) {
-    seller = null;
+    seller = {};
   } else {
     seller = state.entities.users[product.user_id];
   }
