@@ -27,7 +27,7 @@ class CartIndexItem extends React.Component {
       <select
         name="quantity"
         defaultValue={this.props.item.quantity}
-        className="quantity-selector"
+        className="quantity-selector-cart"
         onChange={this.handleChange}
       >
         {options}
@@ -50,27 +50,37 @@ class CartIndexItem extends React.Component {
 
     return (
       <div className="cart-item-container">
-        <Link to={`/users/${seller.id}`}>
+        <Link to={`/users/${seller.id}`} className="cart-user-index-link">
           <img src={seller.photoUrl} className="cart-seller-photo" />
-          <span>{seller.username}</span>
+          <div className="cart-seller-username">{seller.username}</div>
         </Link>
-        <Link to={`/products/${product.id}`}>
-          <ul>
-            <img src={product.photoUrl} className="cart-product-photo" />
-            <li>{product.product_name}</li>
-          </ul>
-        </Link>
-        <button
-          onClick={() =>
-            this.props
-              .deleteCartItem(this.props.item.id)
-              .then(() => this.props.history.replace("/cart"))
-          }
-        >
-          Remove Item
-        </button>
-        <div className="quantity-div">{this.quantitySelector()}</div>
-        <div>Total: ${this.productSubtotal()}</div>
+        <div className="cart-inner-container">
+          <Link to={`/products/${product.id}`} className="cart-product-show-link">
+            <div className="cart-img-container">
+              <img src={product.photoUrl} className="cart-product-photo" />
+              <div className="inner-right-side">
+                <div className="cart-product-name">{product.product_name}</div>
+                <div className="cart-product-description">{product.description}</div>
+              </div>
+            </div>
+          </Link>
+          <div className="quantity-container">
+            <div>Total: ${this.productSubtotal()}</div>
+            <div className="cart-quantity-div">{this.quantitySelector()}</div>
+            <div>
+              <a
+                className="remove-item-button"
+                onClick={() =>
+                  this.props
+                    .deleteCartItem(this.props.item.id)
+                    .then(() => this.props.history.replace("/cart"))
+                }
+              >
+                Remove Item
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

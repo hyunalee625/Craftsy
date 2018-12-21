@@ -6,6 +6,23 @@ class CartIndex extends React.Component {
     this.props.fetchCartItems();
   }
 
+  checkout() {
+    return window.alert("Thanks for checking out my full stack project!");
+  }
+
+  calcTotal() {
+    let total = 0;
+    const items = this.props.items;
+    const products = this.props.products;
+    Object.values(items).forEach(item => {
+      total += item.quantity * products[item.product_id].price;
+    });
+    return total.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
   render() {
     if (!this.props.items || !this.props.products || !this.props.sellers) return null;
 
@@ -31,10 +48,6 @@ class CartIndex extends React.Component {
       );
     });
 
-    if (cartItems.length === 0) {
-      return <div>No items in your cart.</div>;
-    }
-
     return (
       <div className="cart-index-container">
         <h1 className="cart-index-title">Your Cart</h1>
@@ -42,7 +55,28 @@ class CartIndex extends React.Component {
           <div className="left-side-checkout">
             <ul className="cart-index-items">{cartItems}</ul>
           </div>
-          <div className="right-side-checkout" />
+          <div className="right-side-checkout">
+            <div className="right-side-inner-div">
+              <div className="line-item">
+                <p className="subtotal-text">Item(s) total</p>
+                <p className="subtotal-text">${this.calcTotal()}</p>
+              </div>
+              <div className="line-item">
+                <p className="subtotal-text">Shipping</p>
+                <p className="subtotal-text">Free!</p>
+              </div>
+              <div className="total-line" />
+              <div className="line-item total-div">
+                <p className="total-text">Total</p>
+                <p className="total-text">${this.calcTotal()}</p>
+              </div>
+              <div className="checkout-button-container">
+                <button className="checkout-button" onClick={() => this.checkout()}>
+                  Proceed to checkout
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
