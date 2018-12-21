@@ -30,5 +30,8 @@ export const register = user => dispatch =>
     err => dispatch(receiveErrors(err.responseJSON))
   );
 
-export const logout = () => dispatch =>
-  SessionApiUtil.logout().then(() => dispatch(logoutCurrentUser()));
+export const logout = callback => dispatch =>
+  SessionApiUtil.logout().then(() => {
+    dispatch(logoutCurrentUser());
+    callback();
+  });

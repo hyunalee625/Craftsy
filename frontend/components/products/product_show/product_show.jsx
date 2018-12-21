@@ -140,6 +140,7 @@ class ProductShow extends React.Component {
             <h2 className="show-price">${product.price}</h2>
             <div className="quantity-text">Quantity</div>
             <div className="quantity-div">{this.quantitySelector()}</div>
+            <div className="errorMessage">{this.props.errors}</div>
             <div className="add-to-cart-div">
               <input
                 type="submit"

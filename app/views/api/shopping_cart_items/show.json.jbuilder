@@ -17,3 +17,5 @@ json.seller do
     json.photoUrl url_for(@shopping_cart_item.product.seller.photo)
   end
 end
+
+json.quantity @quantity_too_high

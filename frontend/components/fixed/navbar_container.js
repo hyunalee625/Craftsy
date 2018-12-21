@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { signIn, logout } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
 import { fetchCartItems } from "../../actions/cart_item_actions";
@@ -12,10 +13,11 @@ const mapStateToProps = ({ session, entities: { users, cart } }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   const demoUser = { username: "DemoUser", password: "password" };
+  const callback = () => ownProps.history.push("/");
   return {
-    logout: () => dispatch(logout()),
+    logout: () => dispatch(logout(callback)),
     openModal: modal => dispatch(openModal(modal)),
     signInDemo: () => dispatch(signIn(demoUser)),
     fetchCartItems: () => dispatch(fetchCartItems()),
@@ -23,7 +25,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NavBar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NavBar)
+);

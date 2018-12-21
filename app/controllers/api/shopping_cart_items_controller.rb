@@ -10,7 +10,9 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     if @shopping_cart_item
       @shopping_cart_item.quantity = @shopping_cart_item.quantity.to_i + params[:cartItem][:quantity].to_i
+      @quantity_too_high= false
       if @shopping_cart_item.quantity > 10
+        @quantity_too_high = true
         @shopping_cart_item.quantity = 10
       end
     else
