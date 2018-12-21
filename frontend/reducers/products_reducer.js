@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT, REMOVE_PRODUCT } from "../actions/product_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_ALL_CART_ITEMS } from "../actions/cart_item_actions";
+import { RECEIVE_SEARCH_PRODUCTS } from "../actions/search_actions";
 
 import merge from "lodash/merge";
 
@@ -24,6 +25,8 @@ const productsReducer = (state = {}, action) => {
       } else {
         return action.payload.products;
       }
+    case RECEIVE_SEARCH_PRODUCTS:
+      return action.payload.products;
     default:
       return state;
   }

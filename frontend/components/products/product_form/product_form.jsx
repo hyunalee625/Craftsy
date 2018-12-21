@@ -20,15 +20,7 @@ class ProductForm extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.match.params.productId && !prevProps.product.description) {
       this.props.fetchProduct(this.props.match.params.productId);
-      const { id, product_name, description, price, user_id, photoUrl } = this.props.product;
-      this.setState({
-        id: id,
-        product_name: product_name,
-        description: description,
-        price: price,
-        user_id: user_id,
-        photoUrl: photoUrl
-      });
+      this.setState(this.props.product);
     }
   }
 
