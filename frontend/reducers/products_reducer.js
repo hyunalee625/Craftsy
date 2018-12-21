@@ -29,7 +29,8 @@ const productsReducer = (state = {}, action) => {
       if (!action.payload.products) {
         return {};
       } else {
-        return merge({}, state, action.payload.products);
+        // return merge({}, state, action.payload.products);
+        return action.payload.products;
       }
     default:
       return state;
