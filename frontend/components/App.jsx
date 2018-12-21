@@ -9,6 +9,7 @@ import CreateProductFormContainer from "./products/product_form/create_product_f
 import EditProductFormContainer from "./products/product_form/edit_product_form_container";
 import UserShowContainer from "./users/user_show_container";
 import CartIndexContainer from "./cart/cart_index_container";
+import SearchIndexContainer from "./search/search_index_container";
 import { ProtectedRoute } from "../util/route_util";
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
           component={EditProductFormContainer}
         />
         <Route exact path="/users/:userId" component={UserShowContainer} />
+        <Route exact path="/search" component={SearchIndexContainer} />
         <Route exact path="/" />
         <Redirect to="/" />
       </Switch>

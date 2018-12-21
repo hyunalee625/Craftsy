@@ -4,6 +4,19 @@
   border-bottom: 1px solid #e1e3df;
 }
 
+.Categories {
+  height: 40px;
+  max-width: 1332px;
+  margin: auto;
+}
+
+.categories-container {
+  margin: auto;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .NavBar {
   display: flex;
   justify-content: space-between;
@@ -20,12 +33,31 @@
   font-family: "Noto Serif SC", serif;
 }
 
-.all-products-link {
-  color: #0e617a;
+.NavBarLeft {
+  display: flex;
+}
+
+.line {
+  border-top: 1px solid #e1e3df;
+}
+
+.category-links-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 14px;
+}
+
+.product-category {
   text-decoration: none;
-  font-size: 18px;
-  font-family: "Noto Serif SC", serif;
-  padding-left: 50px;
+  color: #222;
+  font-size: 14px;
+}
+
+.product-category:hover {
+  border-bottom: 3px solid #f45800;
+  cursor: pointer;
+  padding-bottom: 9px;
 }
 
 .register-button {
@@ -175,11 +207,62 @@
 
 .cart-icon-container {
   padding-left: 20px;
+  position: relative;
 }
 
 .cart-item-count {
-  border: 1px solid black;
-  padding: 1p;
-  border-radius: 50%;
+  background-color: #faa077;
+  color: #222222;
+  font-weight: bold;
+  border-radius: 100px;
   font-size: 11px;
+  min-width: 14px;
+  min-height: 14px;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  left: 41px;
+  top: -2px;
+  line-height: 14px;
+}
+
+.search-bar-container {
+  margin: auto;
+  padding-left: 25px;
+}
+
+.search-bar-form {
+  display: flex;
+  width: 400px;
+}
+
+.search-bar-input-field {
+  transition: all 0.2s cubic-bezier(0.37, 0.2, 0.28, 1), background-size 1ms;
+  border: 1px solid #e1e3df;
+  border-radius: 4px 0 0 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-indent: 12px;
+  text-align: left;
+  text-decoration: none;
+  outline: none;
+  height: 26px;
+  font-size: 14px;
+  width: 70%;
+  cursor: text;
+}
+
+.search-submit-button {
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+  line-height: 0;
+  height: 34px;
+  font-size: 16px;
+  width: 25%;
+  cursor: pointer;
 }

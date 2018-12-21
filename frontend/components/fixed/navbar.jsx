@@ -1,15 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import CartIcon from "./navbar_cart_icon";
 import ShopIcon from "./navbar_shop_icon";
+import NavBarCategoriesContainer from "./navbar_categories_container";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { query_string: "" };
     this.sessionLinks = this.sessionLinks.bind(this);
     this.loggedInGreeting = this.loggedInGreeting.bind(this);
     this.greeting = this.greeting.bind(this);
     this.dropDown = this.dropDown.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.searchProducts(this.state).then(() => {
+      this.props.history.push({ pathname: "/search", search: `${this.state.query_string}` });
+      this.setState({ query_string: "" });
+    });
+  }
+
+  update() {
+    return e => {
+      this.setState({ ["query_string"]: e.target.value });
+    };
   }
 
   componentDidMount() {
@@ -76,6 +94,23 @@ class NavBar extends React.Component {
     );
   }
 
+  searchBar() {
+    return (
+      <div className="search-bar-container">
+        <form className="search-bar-form" onSubmit={this.handleSubmit}>
+          <input
+            className="search-bar-input-field"
+            type="text"
+            placeholder="Search for products"
+            value={this.state.query_string}
+            onChange={this.update()}
+          />
+          <input type="submit" className="search-submit-button" value="Search" />
+        </form>
+      </div>
+    );
+  }
+
   greeting() {
     return this.props.currentUser ? this.loggedInGreeting() : this.sessionLinks();
   }
@@ -84,7 +119,7 @@ class NavBar extends React.Component {
     if (this.props.cartItemCount === 0) {
       return <div />;
     } else {
-      return <div className="cart-item-count">{this.props.cartItemCount}</div>;
+      return <span className="cart-item-count">{this.props.cartItemCount}</span>;
     }
   }
 
@@ -96,18 +131,23 @@ class NavBar extends React.Component {
             <Link to="/" className="homepage-link">
               Craftsy
             </Link>
-            <Link to="/products" className="all-products-link">
-              All Products
-            </Link>
+            {this.searchBar()}
           </div>
           <div className="NavBarRight">
             {this.greeting()}
             <Link to="/cart" className="cart-icon-container">
-              {this.itemCount()}
-              <CartIcon />
+              <div>
+                {" "}
+                {this.itemCount()}
+                <CartIcon />
+              </div>
               <p className="icon-text">Cart</p>
             </Link>
           </div>
+        </nav>
+        <div className="line" />
+        <nav className="Categories">
+          <NavBarCategoriesContainer />
         </nav>
       </div>
     );
@@ -133,4 +173,4 @@ window.onclick = function(event) {
   }
 };
 
-export default NavBar;
+export default withRouter(NavBar);

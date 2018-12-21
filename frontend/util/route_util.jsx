@@ -27,20 +27,20 @@ const Protected = ({ component: Component, path, loggedIn, exact, openSignInModa
   />
 );
 
-const OwnerOnly = ({ component: Component, path, loggedIn, exact }) => (
-  <Route
-    path={path}
-    exact={exact}
-    render={props => {
-      if (loggedIn) {
-        return <Component {...props} />;
-      } else {
-        openSignInModal();
-        return <MustBeSignedIn />;
-      }
-    }}
-  />
-);
+// const OwnerOnly = ({ component: Component, path, loggedIn, exact }) => (
+//   <Route
+//     path={path}
+//     exact={exact}
+//     render={props => {
+//       if (loggedIn) {
+//         return <Component {...props} />;
+//       } else {
+//         openSignInModal();
+//         return <MustBeSignedIn />;
+//       }
+//     }}
+//   />
+// );
 
 // const isOwner = (state, productId) => {
 //   if (!state.session.currentUser) return false;

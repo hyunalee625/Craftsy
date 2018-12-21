@@ -23,10 +23,14 @@ const productsReducer = (state = {}, action) => {
       if (!action.payload.products) {
         return state;
       } else {
-        return action.payload.products;
+        return merge({}, state, action.payload.products);
       }
     case RECEIVE_SEARCH_PRODUCTS:
-      return action.payload.products;
+      if (!action.payload.products) {
+        return {};
+      } else {
+        return action.payload.products;
+      }
     default:
       return state;
   }

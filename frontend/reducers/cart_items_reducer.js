@@ -4,6 +4,7 @@ import {
   REMOVE_CART_ITEM
 } from "../actions/cart_item_actions";
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_SEARCH_PRODUCTS } from "../actions/search_actions";
 
 import merge from "lodash/merge";
 

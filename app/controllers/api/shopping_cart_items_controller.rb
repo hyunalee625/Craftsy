@@ -6,7 +6,6 @@ class Api::ShoppingCartItemsController < ApplicationController
   end
 
   def create
-    # debugger;
     @shopping_cart_item = ShoppingCartItem.find_by(user_id: params[:cartItem][:user_id], product_id: params[:cartItem][:product_id])
 
     if @shopping_cart_item
