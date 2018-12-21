@@ -8,20 +8,15 @@ class EditProductForm extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.product.id != nextProps.match.params.productId) {
-      this.props.fetchProduct(nextProps.match.params.productId);
-    }
-  }
-
   render() {
     if (!this.props.product.user_id) return <div />;
-    const { action, formType, product, deleteProduct, errors, userId } = this.props;
+    const { action, formType, product, deleteProduct, fetchProduct, errors, userId } = this.props;
     return (
       <ProductForm
         action={action}
         formType={formType}
         product={product}
+        fetchProduct={fetchProduct}
         deleteProduct={deleteProduct}
         errors={errors}
         userId={userId}

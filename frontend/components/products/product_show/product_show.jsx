@@ -63,7 +63,6 @@ class ProductShow extends React.Component {
   }
 
   render() {
-    // debugger;
     const product = this.props.product;
     const seller = this.props.seller;
     const products = this.props.products;

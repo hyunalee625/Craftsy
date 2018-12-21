@@ -11,6 +11,27 @@ class ProductForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.formType === "Update Your Product Details") {
+      this.props.fetchProduct(this.props.match.params.productId);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.productId && !prevProps.product.description) {
+      this.props.fetchProduct(this.props.match.params.productId);
+      const { id, product_name, description, price, user_id, photoUrl } = this.props.product;
+      this.setState({
+        id: id,
+        product_name: product_name,
+        description: description,
+        price: price,
+        user_id: user_id,
+        photoUrl: photoUrl
+      });
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.formType === "Update Your Product Details") {

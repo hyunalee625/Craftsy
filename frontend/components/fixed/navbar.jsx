@@ -18,8 +18,8 @@ class NavBar extends React.Component {
     }
   }
 
-  componentDidUpdate(oldProps) {
-    if (this.props.currentUser && !oldProps.currentUser) {
+  componentDidUpdate(prevProps) {
+    if (this.props.currentUser && !prevProps.currentUser) {
       this.props.fetchCartItems();
     }
   }
