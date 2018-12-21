@@ -10,9 +10,8 @@
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <script type="text/javascript">
-      window.defaultProfilePicUrl = "<%= image_url('defaultprofilepic.png') %>"
-      window.githubIconURL = "<%= image_url('github.png') %>"
-      window.linkedinIconURL = "<%= image_url('linkedin.png') %>"
+      window.githubIconURL = "<%= asset_path('github.png') %>"
+      window.linkedinIconURL = "<%= asset_path('linkedin.png') %>"
     </script>    
   </head>
 
