@@ -20,14 +20,14 @@ const App = () => (
     </header>
     <div className="main-content">
       <Switch>
-        <Route exact path="/products" component={ProductIndexContainer} />
-        <Route exact path="/products/:productId" component={ProductShowContainer} />
         <ProtectedRoute exact path="/products/new" component={CreateProductFormContainer} />
         <ProtectedRoute
           exact
           path="/products/:productId/edit"
           component={EditProductFormContainer}
         />
+        <Route exact path="/products/:productId" component={ProductShowContainer} />
+        <Route exact path="/products" component={ProductIndexContainer} />
         <Route exact path="/users/:userId" component={UserShowContainer} />
         <Route exact path="/search" component={SearchIndexContainer} />
         <ProtectedRoute exact path="/cart" component={CartIndexContainer} />
