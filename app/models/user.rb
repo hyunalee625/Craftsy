@@ -25,6 +25,7 @@ class User < ApplicationRecord
     class_name: :Product
 
   has_many :shopping_cart_items, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   has_one_attached :photo
 
