@@ -19,7 +19,7 @@ class ProductShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.productId != prevProps.match.params.productId) {
+    if (this.props.match.params.productId !== prevProps.match.params.productId) {
       this.props.fetchProduct(this.props.match.params.productId);
       this.setState({ quantity: null });
     }

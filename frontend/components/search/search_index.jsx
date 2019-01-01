@@ -9,7 +9,7 @@ class SearchIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.sellers) return <div />;
+    if (!this.props.sellers) return null;
 
     const query = this.props.location.search.slice(1).replace(/%20/g, " ");
     if (!query.replace(/\s/g, "").length) {

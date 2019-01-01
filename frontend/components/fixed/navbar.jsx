@@ -117,7 +117,7 @@ class NavBar extends React.Component {
 
   itemCount() {
     if (this.props.cartItemCount === 0) {
-      return <div />;
+      return null;
     } else {
       return <span className="cart-item-count">{this.props.cartItemCount}</span>;
     }

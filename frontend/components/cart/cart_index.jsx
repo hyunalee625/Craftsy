@@ -15,7 +15,9 @@ class CartIndex extends React.Component {
     const items = this.props.items;
     const products = this.props.products;
     Object.values(items).forEach(item => {
-      total += item.quantity * products[item.product_id].price;
+      let product = products[item.product_id];
+      if (!product) return null;
+      total += item.quantity * product.price;
     });
     return total.toLocaleString(undefined, {
       minimumFractionDigits: 2,
@@ -31,8 +33,8 @@ class CartIndex extends React.Component {
 
     const cartItems = this.props.items.map(item => {
       const product = products[item.product_id];
+      if (!product) return null;
       const seller = sellers[product.user_id];
-      const fetchCartItems = () => this.props.fetchCartItems();
       const updateCartItem = item => this.props.updateCartItem(item);
       const deleteCartItem = id => this.props.deleteCartItem(id);
 
@@ -43,7 +45,6 @@ class CartIndex extends React.Component {
           product={product}
           seller={seller}
           buyer={buyer}
-          fetchCartItems={fetchCartItems}
           updateCartItem={updateCartItem}
           deleteCartItem={deleteCartItem}
         />
