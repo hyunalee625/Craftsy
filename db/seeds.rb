@@ -5,9 +5,11 @@ require 'open-uri'
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('products')
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 user1 = User.create(username: 'DemoUser', password: 'password', email: 'DemoUser@craftsy.com')
 user2 = User.create(username: 'iSellArt', password: 'iSellArt', email: 'iSellArt@craftsy.com')
@@ -26,6 +28,15 @@ user5.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v15
 user6.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/nerd.png"), filename: "nerd-emoji.png")
 user7.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/tongue.png"), filename: "tongue-emoji.png")
 user8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1545072750/Profile-Pics/laughing.png"), filename: "laughing-emoji.png")
+
+user1.save!
+user2.save!
+user3.save!
+user4.save!
+user5.save!
+user6.save!
+user7.save!
+user8.save!
 
 #Art
 art1 = Product.create(product_name: 'Golden Waves', description: 'This abstract geometric gold acrylic painting is the perfect center piece to any living space.', price: 299.99, user_id: 1)
@@ -332,3 +343,13 @@ plant7.save!
 plant8.save!
 plant9.save!
 plant10.save!
+
+#Reviews
+
+product1review1 = Review.create(body: "Amazing!", rating: 5, user_id: 2, product_id: 1)
+product1review2 = Review.create(body: "Much wow!", rating: 5, user_id: 3, product_id: 1)
+product1review3 = Review.create(body: "Superb!", rating: 5, user_id: 4, product_id: 1)
+
+product2review1 = Review.create(body: "Amazing!", rating: 5, user_id: 2, product_id: 2)
+product2review2 = Review.create(body: "Much wow!", rating: 5, user_id: 3, product_id: 2)
+product2review3 = Review.create(body: "Superb!", rating: 5, user_id: 4, product_id: 2)

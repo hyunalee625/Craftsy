@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import ReviewIndexContainer from "../../reviews/review_index/review_index_container";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -132,8 +133,9 @@ class ProductShow extends React.Component {
             <h2 className="show-description-text">Description</h2>
             <h2 className="show-description">{product.description}</h2>
             <div className="underline" />
-            <div className="reviews-container">Reviews</div>
-            <div className="no-reviews">No reviews for this item yet.</div>
+            <div className="reviews-container">
+              <ReviewIndexContainer />
+            </div>
           </div>
           <div className="show-bottom-right-container">
             <h2 className="show-name">{product.product_name}</h2>

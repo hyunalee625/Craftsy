@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class UserShow extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
+    window.scrollTo(0, 0);
   }
 
   yourShopOrNot() {
