@@ -229,7 +229,7 @@ home6 = Product.create(product_name: 'Fig Rosemary Candle', description: 'Freshl
 
 home7 = Product.create(product_name: 'Decorative Bottle Lights', description: 'When you have spare bottles, beverage cans, glass bottles, you can install cork lamps, and the light will fill your life.', price: 29.99, user_id: 6)
 
-home8 = Product.create(product_name: 'Aloha Mahalo Door Mat', description: 'Coir doormats are hand-painted, having their own uniqueness and slight imperfections, making them each an original. To extend the life of the mat be sure to protect from extreme weather conditions and direct sunlight.', price: 27.99, user_id: 6)
+home8 = Product.create(product_name: 'Aloha Door Mat', description: 'Clean by shaking out. Keep in a sheltered area such as a covered porch, patio, entryway or garage to prolong the life of the mat. Direct rain and snow are not recommended since it can take a long time for the doormat to dry out completely.', price: 27.99, user_id: 6)
 
 home9 = Product.create(product_name: 'Scratch Off World Map', description: 'Showcase your adventures and plan your next destination with this luxe Black & Gold Travel Tracker Map. The gold foil easily scratches off to reveal the locations you’ve explored and the exquisite design satisfies the deepest wanderlust.', price: 42.99, user_id: 6)
 
@@ -242,7 +242,7 @@ home4.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_s
 home5.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989073/Home%20Decor/clock.jpg"), filename: "striking-clock.jpg")
 home6.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989073/Home%20Decor/fig-rosemary-candle.jpg"), filename: "fig-rosemary-candle.jpg")
 home7.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989073/Home%20Decor/bottle-lights.jpg"), filename: "bottle-lights.jpg")
-home8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989072/Home%20Decor/welcome-mat.jpg"), filename: "aloha-mahalo-mat.jpg")
+home8.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/v1546412373/Home%20Decor/aloha-mat.jpg"), filename: "aloha-mat.jpg")
 home9.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989072/Home%20Decor/scratch-off-map.jpg"), filename: "world-map.jpg")
 home10.photo.attach(io: open("https://res.cloudinary.com/craftsy/image/upload/c_scale,w_500/v1544989072/Home%20Decor/comfy-blanket.jpg"), filename: "warm-blanket.jpg")
 
@@ -275,7 +275,7 @@ kitchen7 = Product.create(product_name: 'Mugs Galore', description: 'A six-piece
 
 kitchen8 = Product.create(product_name: 'Laser Cut Coasters', description: 'Our laser cut coasters will bring that unique twist to any room. Made of Oak Wood and finished with polyurethane for protection against water, humidity, and heat.', price: 24.99, user_id: 7)
 
-kitchen9 = Product.create(product_name: 'Olive Wood Serving Plate and Cheese Knives', description: 'A must have for anyone who calls themselves a cheese-lover! We eat with our eyes before our mouths afterall, right? This cheeseboard and accompanying set of cheese knives are the perfect for breaking out during the holidays.', price: 41.99, user_id: 7)
+kitchen9 = Product.create(product_name: 'Olive Wood Board & Cheese Knives', description: 'A must have for anyone who calls themselves a cheese-lover! We eat with our eyes before our mouths afterall, right? This cheeseboard and accompanying set of cheese knives are the perfect for breaking out during the holidays.', price: 41.99, user_id: 7)
 
 kitchen10 = Product.create(product_name: 'Slate Serving Board', description: 'One 12"x12" slate etched with a map of the borders and roadways of the great state of New York. Natural edge, striated slates are each a unique piece and completed with 4 cork feet to keep your tabletops safe.', price: 32.99, user_id: 7)
 
