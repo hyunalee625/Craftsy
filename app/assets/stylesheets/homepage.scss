@@ -1,0 +1,94 @@
+.homepage-container {
+  max-width: 1402px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.popular-products {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1402px;
+  margin: auto;
+}
+
+.image-cluster-one,
+.image-cluster-two {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-cluster-one {
+  padding-bottom: 10px;
+}
+
+.image-cluster-two {
+  padding-bottom: 40px;
+}
+
+.cluster-small,
+.cluster-large {
+  height: 300px;
+  object-fit: cover;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 3px;
+}
+
+.cluster-small {
+  width: 35%;
+}
+
+.cluster-large {
+  width: 64%;
+}
+
+.handcrafted-text {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 30px;
+  font-weight: 300;
+  color: #222;
+}
+
+.popular-text {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding-bottom: 24px;
+}
+
+.checkmarks-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+
+.checkmark-div-top {
+  display: flex;
+  justify-content: center;
+}
+
+.check-icon {
+  font-size: 16px;
+  font-weight: 300;
+  color: #e55400;
+  fill: currentColor;
+  padding-right: 8px;
+}
+
+.check-title {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
+  margin: auto 0;
+}
+
+.check-body {
+  font-size: 14px;
+  max-width: 340px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
+}

@@ -10,9 +10,7 @@ const Footer = () => {
 
       <div className="footer-right">
         <div className="footer-right-top">
-          <h1 className="footer-slogan footer-personal-project">
-            Personal project inspired by Etsy
-          </h1>
+          <h1 className="footer-slogan footer-personal-project">Inspired by Etsy.</h1>
         </div>
         <div className="footer-right-bottom">
           <h1 className="footer-name">Peter Zeng</h1>
