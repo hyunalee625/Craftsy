@@ -95,7 +95,6 @@
   padding-bottom: 20px;
 }
 
-.show-description-text,
 .show-shipping-text {
   color: #222;
   font-size: 16px;
@@ -103,6 +102,15 @@
   font-weight: 500;
   padding-top: 24px;
   padding-bottom: 8px;
+}
+
+.show-description-text {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 16px;
 }
 
 .show-description,

@@ -27,8 +27,14 @@ class NavBarCategories extends React.Component {
           <li className="product-category" onClick={() => this.handleClick("fun")}>
             Fun Little Gifts
           </li>
+          <li className="product-category" onClick={() => this.handleClick("furniture")}>
+            Furniture
+          </li>
           <li className="product-category" onClick={() => this.handleClick("home")}>
             Home Decor
+          </li>
+          <li className="product-category" onClick={() => this.handleClick("kitchen")}>
+            Kitchen
           </li>
           <li className="product-category" onClick={() => this.handleClick("plant")}>
             Plants

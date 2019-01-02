@@ -1,10 +1,23 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import ReviewIndexItem from "./review_index_item";
+import Rating from "react-rating";
 
 class ReviewIndex extends React.Component {
   componentDidMount() {
     this.props.fetchReviews(this.props.match.params.productId);
+  }
+
+  averageRating() {
+    let totalRating = 0;
+    let numReviews = 0;
+
+    this.props.reviews.map(review => {
+      totalRating += review.rating;
+      numReviews += 1;
+    });
+
+    return totalRating / numReviews;
   }
 
   render() {
@@ -16,7 +29,17 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className="review-index-container">
-        <h1 className="review-index-title">Reviews</h1>
+        <div className="review-header">
+          <h1 className="review-index-title">Reviews</h1>
+          <Rating
+            className="average-review-rating"
+            emptySymbol="fa fa-star-o fa-2x"
+            fullSymbol="fa fa-star fa-2x"
+            initialRating={this.averageRating()}
+            readonly
+          />
+          <div className="num-reviews">({reviews.length})</div>
+        </div>
         <ul className="review-index-items">{reviews}</ul>
       </div>
     );
