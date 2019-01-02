@@ -15,7 +15,7 @@ const mapStateToProps = ({ session, entities: { users, cart } }) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const demoUser = { username: "DemoUser", password: "password" };
-  const callback = () => ownProps.history.push("/products");
+  const callback = () => ownProps.history.push("/");
 
   return {
     logout: () => dispatch(logout(callback)),
