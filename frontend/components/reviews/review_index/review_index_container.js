@@ -1,16 +1,25 @@
 import { connect } from "react-redux";
 import ReviewIndex from "./review_index";
-import { fetchReviews } from "../../../actions/review_actions";
+import {
+  fetchReviews,
+  createReview,
+  updateReview,
+  deleteReview
+} from "../../../actions/review_actions";
 
 const mapStateToProps = state => {
   return {
-    reviews: Object.values(state.entities.reviews)
+    reviews: Object.values(state.entities.reviews),
+    currentUserId: parseInt(state.session.id)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchReviews: productId => dispatch(fetchReviews(productId))
+    fetchReviews: productId => dispatch(fetchReviews(productId)),
+    createReview: review => dispatch(createReview(review)),
+    updateReview: review => dispatch(updateReview(review)),
+    deleteReview: review => dispatch(deleteReview(review))
   };
 };
 
