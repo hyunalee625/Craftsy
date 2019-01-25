@@ -32,6 +32,8 @@ class ReviewIndex extends React.Component {
 
     if (reviewAlreadyWritten) {
       return null;
+    } else if (!this.props.currentUserId) {
+      return <div className="review-log-in">Log in to leave a review.</div>;
     } else {
       return (
         <CreateReviewForm
@@ -68,6 +70,7 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className="review-index-container">
+        <div className="new-review">{this.newReviewForm()}</div>
         <div className="review-header">
           <h1 className="review-index-title">Reviews</h1>
           <Rating
@@ -79,7 +82,6 @@ class ReviewIndex extends React.Component {
           />
           <div className="num-reviews">({reviews.length})</div>
         </div>
-        {this.newReviewForm()}
         <ul className="review-index-items">{reviews}</ul>
       </div>
     );
