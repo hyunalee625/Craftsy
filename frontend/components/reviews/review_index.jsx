@@ -37,6 +37,13 @@ class ReviewIndex extends React.Component {
       );
     });
 
+    reviews.forEach((review, i) => {
+      if (review.props.review.user_id === this.props.currentUserId) {
+        reviews.splice(i, 1);
+        reviews.unshift(review);
+      }
+    });
+
     return (
       <div className="review-index-container">
         <div className="review-header">
