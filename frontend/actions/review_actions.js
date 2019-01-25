@@ -31,17 +31,14 @@ export const fetchReviews = productId => dispatch =>
 export const createReview = review => dispatch =>
   ReviewApiUtil.createReview(review).then(
     review => dispatch(receiveReview(review)),
-    errors => dispatch(receiveReviewErrors(errors))
+    errors => dispatch(receiveReviewErrors(errors.responseJSON))
   );
 
 export const updateReview = review => dispatch =>
   ReviewApiUtil.updateReview(review).then(
     review => dispatch(receiveReview(review)),
-    errors => dispatch(receiveReviewErrors(errors))
+    errors => dispatch(receiveReviewErrors(errors.responseJSON))
   );
 
 export const deleteReview = review => dispatch =>
-  ReviewApiUtil.deleteReview(review).then(
-    review => dispatch(removeReview(review)),
-    errors => dispatch(receiveReviewErrors(errors))
-  );
+  ReviewApiUtil.deleteReview(review).then(review => dispatch(removeReview(review)));
