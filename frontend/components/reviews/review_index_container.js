@@ -5,12 +5,13 @@ import {
   createReview,
   updateReview,
   deleteReview
-} from "../../../actions/review_actions";
+} from "../../actions/review_actions";
 
 const mapStateToProps = state => {
   return {
     reviews: Object.values(state.entities.reviews),
-    currentUserId: parseInt(state.session.id)
+    currentUserId: parseInt(state.session.id),
+    errors: state.errors.review
   };
 };
 

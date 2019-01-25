@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import ReviewIndexItem from "./review_index_item";
 import Rating from "react-rating";
+import CreateReviewForm from "./create_review_form";
 
 class ReviewIndex extends React.Component {
   componentDidMount() {
@@ -49,6 +50,11 @@ class ReviewIndex extends React.Component {
           />
           <div className="num-reviews">({reviews.length})</div>
         </div>
+        <CreateReviewForm
+          currentUserId={this.props.currentUserId}
+          createReview={this.props.createReview}
+          errors={this.props.errors}
+        />
         <ul className="review-index-items">{reviews}</ul>
       </div>
     );
