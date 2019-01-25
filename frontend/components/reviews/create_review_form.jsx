@@ -33,7 +33,6 @@ class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);
-    // this.setState({ body: "", rating: 0 });
   }
 
   render() {
@@ -47,16 +46,15 @@ class CreateReviewForm extends React.Component {
     return (
       <div className="review-form-container">
         <form className="entire-review-form" onSubmit={this.handleSubmit}>
-          <div className="left-side-form">
-            <div className="form-title">Review this product</div>
-            <label>
-              <div className="label-text">Comments:</div>
-              <textarea cols="90" rows="5" onChange={this.update("body")} />
-            </label>
-            <label>
-              <div className="label-text">Rating:</div>
+          <div className="review-prompt">Review this product</div>
+          <label>
+            <textarea className="review-body-text" rows="4" onChange={this.update("body")} />
+          </label>
+          <div className="review-form-bottom-container">
+            <label className="review-form-bottom">
+              <span className="rating-text">Rating:</span>
               <Rating
-                className="review-details-bottom review-rating"
+                className="review-rating rating-stars"
                 emptySymbol="fa fa-star-o fa-2x"
                 fullSymbol="fa fa-star fa-2x"
                 initialRating={this.state.rating}
@@ -64,8 +62,8 @@ class CreateReviewForm extends React.Component {
               />
             </label>
             <input className="submit-button" type="submit" value="Submit" />
-            <ul>{errors()}</ul>
           </div>
+          <ul>{errors()}</ul>
         </form>
       </div>
     );
