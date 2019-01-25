@@ -34,8 +34,15 @@ class ReviewIndex extends React.Component {
       return null;
     } else if (!this.props.currentUserId) {
       return (
-        <div onClick={() => this.props.openModal("signIn")}>
-          <span className="log-in-text highlight">Log in</span>
+        <div>
+          <span onClick={() => this.props.openModal("signIn")} className="log-in-text highlight">
+            Log in
+          </span>
+          <span className="log-in-text"> or</span>
+          <span onClick={() => this.props.openModal("register")} className="log-in-text highlight">
+            {" "}
+            register
+          </span>
           <span className="log-in-text"> to leave a review.</span>
         </div>
       );
