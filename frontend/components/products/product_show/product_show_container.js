@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ProductShow from "./product_show";
 import { fetchProduct, fetchProducts } from "../../../actions/product_actions";
+import { fetchReviews } from "../../../actions/review_actions";
 import { createCartItem } from "../../../actions/cart_item_actions";
 import { openModal } from "../../../actions/modal_actions";
 
@@ -27,6 +28,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchProduct: id => dispatch(fetchProduct(id)),
     fetchProducts: () => dispatch(fetchProducts()),
+    fetchReviews: productId => dispatch(fetchReviews(productId)),
     createCartItem: cartItem => dispatch(createCartItem(cartItem)),
     openSignInModal: () => dispatch(openModal("signIn"))
   };
