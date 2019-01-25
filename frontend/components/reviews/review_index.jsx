@@ -21,6 +21,28 @@ class ReviewIndex extends React.Component {
     return totalRating / numReviews;
   }
 
+  newReviewForm() {
+    let reviewAlreadyWritten = false;
+
+    this.props.reviews.forEach(review => {
+      if (review.user_id === this.props.currentUserId) {
+        reviewAlreadyWritten = true;
+      }
+    });
+
+    if (reviewAlreadyWritten) {
+      return null;
+    } else {
+      return (
+        <CreateReviewForm
+          currentUserId={this.props.currentUserId}
+          createReview={this.props.createReview}
+          errors={this.props.errors}
+        />
+      );
+    }
+  }
+
   render() {
     if (!this.props.reviews) return null;
 
@@ -57,11 +79,7 @@ class ReviewIndex extends React.Component {
           />
           <div className="num-reviews">({reviews.length})</div>
         </div>
-        <CreateReviewForm
-          currentUserId={this.props.currentUserId}
-          createReview={this.props.createReview}
-          errors={this.props.errors}
-        />
+        {this.newReviewForm()}
         <ul className="review-index-items">{reviews}</ul>
       </div>
     );
