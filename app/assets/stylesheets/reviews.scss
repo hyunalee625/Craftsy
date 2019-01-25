@@ -1,6 +1,12 @@
 .entire-review-container {
   display: flex;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.orange-border {
+  border: 1px solid #f56400;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .review-left-container {
