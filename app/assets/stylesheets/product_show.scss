@@ -61,6 +61,7 @@
 .first-four-prod-pic {
   width: 64px;
   height: 64px;
+  object-fit: cover;
   padding: 2px;
   border: 1px solid rgb(206, 205, 205);
   border-radius: 3px;
@@ -75,7 +76,10 @@
 }
 
 .all-other-prod-pic {
-  width: 100%;
+  object-fit: cover;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1%;
 }
 
 .total-items-container {
