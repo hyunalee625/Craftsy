@@ -48,10 +48,10 @@ class CreateReviewForm extends React.Component {
       <div className="review-form-container">
         <form className="entire-review-form" onSubmit={this.handleSubmit}>
           <div className="left-side-form">
-            <div className="form-title">Write a Review</div>
+            <div className="form-title">Review this product</div>
             <label>
               <div className="label-text">Comments:</div>
-              <input type="text" onChange={this.update("body")} />
+              <textarea cols="90" rows="5" onChange={this.update("body")} />
             </label>
             <label>
               <div className="label-text">Rating:</div>
