@@ -4,6 +4,7 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+export const REMOVE_REVIEW_ERRORS = "REMOVE_REVIEW_ERRORS";
 
 const receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
@@ -23,6 +24,10 @@ const removeReview = review => ({
 const receiveReviewErrors = errors => ({
   type: RECEIVE_REVIEW_ERRORS,
   errors
+});
+
+export const removeReviewErrors = () => ({
+  type: REMOVE_REVIEW_ERRORS
 });
 
 export const fetchReviews = productId => dispatch =>

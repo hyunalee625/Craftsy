@@ -45,12 +45,16 @@ class CreateReviewForm extends React.Component {
 
     return (
       <div className="review-form-container">
-        <form className="entire-review-form" onSubmit={this.handleSubmit}>
+        <form
+          onClick={this.props.removeReviewErrors}
+          className="entire-review-form"
+          onSubmit={this.handleSubmit}
+        >
           <div className="review-prompt">Review this product</div>
           <label>
             <textarea className="review-body-text" rows="4" onChange={this.update("body")} />
           </label>
-          <div className="review-form-bottom-container">
+          <div className="review-form-bottom-container" onClick={e => e.stopPropagation()}>
             <label className="review-form-bottom">
               <span className="rating-text">Rating:</span>
               <Rating

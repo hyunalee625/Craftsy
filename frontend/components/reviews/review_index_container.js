@@ -4,7 +4,8 @@ import {
   fetchReviews,
   createReview,
   updateReview,
-  deleteReview
+  deleteReview,
+  removeReviewErrors
 } from "../../actions/review_actions";
 
 const mapStateToProps = state => {
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     fetchReviews: productId => dispatch(fetchReviews(productId)),
     createReview: review => dispatch(createReview(review)),
     updateReview: review => dispatch(updateReview(review)),
-    deleteReview: review => dispatch(deleteReview(review))
+    deleteReview: review => dispatch(deleteReview(review)),
+    removeReviewErrors: () => dispatch(removeReviewErrors())
   };
 };
 

@@ -39,6 +39,7 @@ class ReviewIndex extends React.Component {
         <CreateReviewForm
           currentUserId={this.props.currentUserId}
           createReview={this.props.createReview}
+          removeReviewErrors={this.props.removeReviewErrors}
           errors={this.props.errors}
         />
       );
@@ -57,6 +58,8 @@ class ReviewIndex extends React.Component {
           currentUserId={this.props.currentUserId}
           updateReview={this.props.updateReview}
           deleteReview={this.props.deleteReview}
+          removeReviewErrors={this.props.removeReviewErrors}
+          errors={this.props.errors}
         />
       );
     });
