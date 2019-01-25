@@ -37,20 +37,36 @@ class ReviewIndexItem extends React.Component {
 
   deleteButton() {
     return (
-      <div>
-        <input type="submit" value="Remove Review" onClick={this.handleDelete} />
-      </div>
+      <span>
+        <input
+          className="cancel-button"
+          type="submit"
+          value="Remove Review"
+          onClick={this.handleDelete}
+        />
+      </span>
     );
   }
 
   render() {
     const review = this.state;
 
+    const errors = () =>
+      this.props.errors.map((error, i) => (
+        <li className="errorMessage" key={i}>
+          {error}
+        </li>
+      ));
+
     if (!review) return null;
 
     if (review.user_id === this.props.currentUserId) {
       return (
-        <form className="entire-review-container orange-border" onSubmit={this.handleSubmit}>
+        <form
+          onClick={this.props.removeReviewErrors}
+          className="entire-review-container orange-border"
+          onSubmit={this.handleSubmit}
+        >
           <Link
             to={`/users/${review.user_id}`}
             className="review-left-container review-user-photo-link"
@@ -58,7 +74,7 @@ class ReviewIndexItem extends React.Component {
             <img src={review.userPhoto} className=" review-user-photo" />
           </Link>
           <div className="review-right-container">
-            <div className="review-details-container">
+            <div className="review-details-container" onClick={e => e.stopPropagation()}>
               <div className="review-details-top">
                 <Link to={`/users/${review.user_id}`} className="review-username-link">
                   <div className="review-username">{review.username}</div>
@@ -75,14 +91,17 @@ class ReviewIndexItem extends React.Component {
                 onChange={this.updateRating("rating")}
               />
             </div>
-            <input
-              type="text"
+            <textarea
+              rows="4"
               value={review.body}
               onChange={this.update("body")}
-              className="review-body-input-field"
+              className="review-body-text"
             />
-            {this.deleteButton()}
-            <input className="submit-button" type="submit" value="Submit" />
+            <div className="update-review-buttons">
+              <input className="submit-button update-button" type="submit" value="Update Review" />
+              {this.deleteButton()}
+            </div>
+            <ul>{errors()}</ul>
           </div>
         </form>
       );
