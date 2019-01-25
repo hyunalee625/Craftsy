@@ -36,9 +36,7 @@ class CartIndexItem extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ quantity: parseInt(e.target.value) }, () =>
-      this.props.updateCartItem(this.state)
-    );
+    this.x({ quantity: parseInt(e.target.value) }, () => this.props.updateCartItem(this.state));
   }
 
   render() {
