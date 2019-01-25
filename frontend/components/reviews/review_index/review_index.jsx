@@ -24,7 +24,16 @@ class ReviewIndex extends React.Component {
     if (!this.props.reviews) return null;
 
     const reviews = this.props.reviews.map(review => {
-      return <ReviewIndexItem key={review.id} review={review} />;
+      return (
+        <ReviewIndexItem
+          key={review.id}
+          review={review}
+          productId={review.product_id}
+          currentUserId={this.props.currentUserId}
+          updateReview={this.props.updateReview}
+          deleteReview={this.props.deleteReview}
+        />
+      );
     });
 
     return (
