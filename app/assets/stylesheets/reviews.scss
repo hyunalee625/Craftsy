@@ -48,9 +48,17 @@
   padding-bottom: 20px;
 }
 
-.review-log-in {
-  color: #f38033;
+.log-in-text {
   font-style: italic;
+}
+
+.highlight {
+  color: #f38033;
+  text-decoration: underline;
+}
+
+.highlight:hover {
+  cursor: pointer;
 }
 
 .review-rating {
