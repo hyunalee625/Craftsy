@@ -33,7 +33,12 @@ class ReviewIndex extends React.Component {
     if (reviewAlreadyWritten) {
       return null;
     } else if (!this.props.currentUserId) {
-      return <div className="review-log-in">Log in to leave a review.</div>;
+      return (
+        <div onClick={() => this.props.openModal("signIn")}>
+          <span className="log-in-text highlight">Log in</span>
+          <span className="log-in-text"> to leave a review.</span>
+        </div>
+      );
     } else {
       return (
         <CreateReviewForm

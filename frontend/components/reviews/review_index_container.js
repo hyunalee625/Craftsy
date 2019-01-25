@@ -7,6 +7,7 @@ import {
   deleteReview,
   removeReviewErrors
 } from "../../actions/review_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
   return {
@@ -22,7 +23,8 @@ const mapDispatchToProps = dispatch => {
     createReview: review => dispatch(createReview(review)),
     updateReview: review => dispatch(updateReview(review)),
     deleteReview: review => dispatch(deleteReview(review)),
-    removeReviewErrors: () => dispatch(removeReviewErrors())
+    removeReviewErrors: () => dispatch(removeReviewErrors()),
+    openModal: modal => dispatch(openModal(modal))
   };
 };
 
