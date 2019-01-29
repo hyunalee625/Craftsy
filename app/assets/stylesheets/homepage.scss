@@ -6,6 +6,7 @@
 
 .popular-products {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1402px;
   margin: auto;
@@ -39,6 +40,10 @@
 
 .cluster-large {
   width: 64%;
+}
+
+.img-margin {
+  margin-right: 10px;
 }
 
 .handcrafted-text {
