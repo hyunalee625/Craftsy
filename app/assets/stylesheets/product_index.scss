@@ -15,14 +15,17 @@
 
 .product-index-items {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 89%;
   margin: auto;
 }
 
 .product-index-item {
-  min-width: 240px;
+  width: 16vw;
+  max-width: 250px;
+  min-width: 180px;
+  margin: 0 5px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -35,14 +38,21 @@
 
 .product-photo {
   object-fit: cover;
-  height: 250px;
-  width: 250px;
+  height: 16vw;
+  width: 16vw;
+  max-height: 250px;
+  min-height: 180px;
+  max-width: 250px;
+  min-width: 180px;
   margin-bottom: 1%;
 }
 
 .filling-empty-space {
-  width: 250px;
+  width: 16vw;
+  max-width: 250px;
+  min-width: 180px;
   height: 0;
+  margin: 0 5px;
 }
 
 .product-information {
