@@ -37,7 +37,7 @@ class HomePage extends React.Component {
         <div className="image-cluster-one">
           <img
             src="https://res.cloudinary.com/craftsy/image/upload/v1546404870/Homepage/background-blank-business-301703.jpg"
-            className="cluster-large"
+            className="cluster-large img-margin"
           />
           <img
             src="https://res.cloudinary.com/craftsy/image/upload/v1546410460/Homepage/boat-folding-origami-19678.jpg"
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
         <div className="image-cluster-two">
           <img
             src="https://res.cloudinary.com/craftsy/image/upload/v1546410458/Homepage/analog-analogue-author-997721.jpg"
-            className="cluster-small"
+            className="cluster-small img-margin"
           />
           <img
             src="https://res.cloudinary.com/craftsy/image/upload/v1546404879/Homepage/activity-art-art-class-730807.jpg"
@@ -91,7 +91,13 @@ class HomePage extends React.Component {
           </div>
         </div>
         <h1 className="popular-text">Popular Now</h1>
-        <ul className="popular-products">{products}</ul>
+        <ul className="popular-products">
+          {products}
+          <li className="filling-empty-space" />
+          <li className="filling-empty-space" />
+          <li className="filling-empty-space" />
+          <li className="filling-empty-space" />
+        </ul>
       </div>
     );
   }
