@@ -5,7 +5,7 @@ import { updateProduct, deleteProduct, fetchProduct } from "../../../actions/pro
 
 class EditProductForm extends React.Component {
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchProduct(parseInt(this.props.match.params.productId));
   }
 
   render() {
@@ -35,7 +35,8 @@ const mapStateToProps = (state, ownProps) => {
     photoUrl: null
   };
 
-  const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
+  const product =
+    state.entities.products[parseInt(ownProps.match.params.productId)] || defaultProduct;
 
   return {
     product,

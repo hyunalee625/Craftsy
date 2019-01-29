@@ -13,13 +13,13 @@ class ProductForm extends React.Component {
 
   componentDidMount() {
     if (this.props.formType === "Update Your Product Details") {
-      this.props.fetchProduct(this.props.match.params.productId);
+      this.props.fetchProduct(parseInt(this.props.match.params.productId));
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.productId && !prevProps.product.description) {
-      this.props.fetchProduct(this.props.match.params.productId);
+      this.props.fetchProduct(parseInt(this.props.match.params.productId));
       this.setState(this.props.product);
     }
   }
