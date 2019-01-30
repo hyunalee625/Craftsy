@@ -36,21 +36,21 @@ class HomePage extends React.Component {
         </div>
         <div className="image-cluster-one">
           <img
-            src="https://res.cloudinary.com/craftsy/image/upload/v1546404870/Homepage/background-blank-business-301703.jpg"
+            src="https://res.cloudinary.com/craftsy/image/upload/v1548809646/Homepage-resized/background-blank-business-resized.jpg"
             className="cluster-large img-margin"
           />
           <img
-            src="https://res.cloudinary.com/craftsy/image/upload/v1546410460/Homepage/boat-folding-origami-19678.jpg"
+            src="https://res.cloudinary.com/craftsy/image/upload/v1548809646/Homepage-resized/boat-folding-origami-resized.jpg"
             className="cluster-small"
           />
         </div>
         <div className="image-cluster-two">
           <img
-            src="https://res.cloudinary.com/craftsy/image/upload/v1546410458/Homepage/analog-analogue-author-997721.jpg"
+            src="https://res.cloudinary.com/craftsy/image/upload/v1548809646/Homepage-resized/analog-analogue-author-resized.jpg"
             className="cluster-small img-margin"
           />
           <img
-            src="https://res.cloudinary.com/craftsy/image/upload/v1546404879/Homepage/activity-art-art-class-730807.jpg"
+            src="https://res.cloudinary.com/craftsy/image/upload/v1548809646/Homepage-resized/activity-art-class-resized.jpg"
             className="cluster-large"
           />
         </div>
