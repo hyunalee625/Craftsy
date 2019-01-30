@@ -4,24 +4,10 @@ import { withRouter, Link } from "react-router-dom";
 class ProductForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.product;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.update = this.update.bind(this);
     this.handleFile = this.handleFile.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.props.formType === "Update Your Product Details") {
-      this.props.fetchProduct(parseInt(this.props.match.params.productId));
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.productId && !prevProps.product.description) {
-      this.props.fetchProduct(parseInt(this.props.match.params.productId));
-      this.setState(this.props.product);
-    }
   }
 
   handleSubmit(e) {
@@ -32,12 +18,12 @@ class ProductForm extends React.Component {
       });
     } else {
       const productData = new FormData();
-      productData.append("product[product_name]", this.state.product_name);
-      productData.append("product[description]", this.state.description);
-      productData.append("product[price]", this.state.price);
+      productData.append("product[product_name]", this.props.product.product_name);
+      productData.append("product[description]", this.props.product.description);
+      productData.append("product[price]", this.props.product.price);
       productData.append("product[user_id]", this.props.userId);
-      if (this.state.photoFile) {
-        productData.append("product[photo]", this.state.photoFile);
+      if (this.props.product.photoFile) {
+        productData.append("product[photo]", this.props.product.photoFile);
       }
       this.props.action(productData).then(payload => {
         this.props.history.push(`/users/${Object.keys(payload.payload.seller)[0]}`);
@@ -103,8 +89,8 @@ class ProductForm extends React.Component {
           {error}
         </li>
       ));
-    const photoPreview = this.state.photoUrl ? (
-      <img className="photo-preview" src={this.state.photoUrl} />
+    const photoPreview = this.props.product.photoUrl ? (
+      <img className="photo-preview" src={this.props.product.photoUrl} />
     ) : null;
 
     return (
@@ -116,7 +102,7 @@ class ProductForm extends React.Component {
               <div className="label-text">Product name:</div>
               <input
                 type="text"
-                value={this.state.product_name}
+                value={this.props.product.product_name}
                 onChange={this.update("product_name")}
                 className="product-name-input-field"
                 placeholder="Include keywords that buyers would use to search for your item."
@@ -126,7 +112,7 @@ class ProductForm extends React.Component {
               <div className="label-text">Price:</div>
               <input
                 type="number"
-                value={this.state.price}
+                value={this.props.product.price}
                 onChange={this.update("price")}
                 className="price-input-field"
                 placeholder="19.99"
@@ -138,7 +124,7 @@ class ProductForm extends React.Component {
               <div className="label-text">Description:</div>
               <textarea
                 type="text"
-                value={this.state.description}
+                value={this.props.product.description}
                 onChange={this.update("description")}
                 rows="10"
                 cols="100"
