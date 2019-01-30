@@ -37,15 +37,21 @@ class ProductShow extends React.Component {
     return (
       <select
         name="quantity"
-        defaultValue="-"
+        // defaultValue="-"
+        value={this.state.quantity === null ? "-" : this.state.quantity}
         className="quantity-selector"
         onChange={e =>
           this.setState({ quantity: parseInt(e.target.value), product_id: this.props.product.id })
         }
       >
-        <option key="0" selected={this.state.quantity === null} disabled={true} value={"-"}>
+        {/* <option key="0" selected={this.state.quantity === null} disabled={true} value={"-"}>
+          {"-"}
+        </option> */}
+
+        <option key="0" disabled={true} value="-">
           {"-"}
         </option>
+
         {options}
       </select>
     );
