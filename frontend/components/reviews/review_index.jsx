@@ -5,10 +5,6 @@ import Rating from "react-rating";
 import CreateReviewForm from "./create_review_form";
 
 class ReviewIndex extends React.Component {
-  componentDidMount() {
-    this.props.fetchReviews(this.props.match.params.productId);
-  }
-
   averageRating() {
     let totalRating = 0;
     let numReviews = 0;
