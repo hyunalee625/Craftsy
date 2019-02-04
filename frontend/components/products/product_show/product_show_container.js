@@ -20,8 +20,7 @@ const mapStateToProps = (state, ownProps) => {
     product,
     seller,
     currentUserId: state.session.id,
-    errors: state.errors.quantity,
-    productId
+    errors: state.errors.quantity
   };
 };
 
