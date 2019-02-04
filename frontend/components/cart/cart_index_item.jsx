@@ -36,7 +36,9 @@ class CartIndexItem extends React.Component {
   }
 
   handleChange(e) {
-    this.x({ quantity: parseInt(e.target.value) }, () => this.props.updateCartItem(this.state));
+    this.setState({ quantity: parseInt(e.target.value) }, () =>
+      this.props.updateCartItem(this.state)
+    );
   }
 
   render() {
@@ -53,12 +55,17 @@ class CartIndexItem extends React.Component {
           <div className="cart-seller-username">{seller.username}</div>
         </Link>
         <div className="cart-inner-container">
-          <Link to={`/products/${product.id}`} className="cart-product-show-link">
+          <Link
+            to={`/products/${product.id}`}
+            className="cart-product-show-link"
+          >
             <div className="cart-img-container">
               <img src={product.photoUrl} className="cart-product-photo" />
               <div className="inner-right-side">
                 <div className="cart-product-name">{product.product_name}</div>
-                <div className="cart-product-description">{product.description}</div>
+                <div className="cart-product-description">
+                  {product.description}
+                </div>
               </div>
             </div>
           </Link>
