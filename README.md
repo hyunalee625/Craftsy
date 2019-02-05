@@ -25,7 +25,7 @@ Users are able to access the full functionality of this portfolio site without h
 
 Once logged in, users are able to add items to their shopping cart and have them persist until they are ready to checkout, whether that's in the next hour or the next day. No matter, products added to your cart will be there when you log back in.
 
-![Demo of user accounts feature](https://i.gyazo.com/fda854c5456d15b54034f9f40c034651.gif)
+[![Image from Gyazo](https://i.gyazo.com/fda854c5456d15b54034f9f40c034651.gif)](https://gyazo.com/fda854c5456d15b54034f9f40c034651)
 
 ### Search Bar
 
