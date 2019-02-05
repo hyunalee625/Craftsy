@@ -2,7 +2,7 @@
 
 Craftsy is a curated marketplace for unique and handcrafted goods inspired by Etsy. Users can both browse listings and purchase products, as well as set up shop themselves.
 
-[Explore Craftsy here!](craftsy.peterzeng.io)
+[Explore Craftsy here!](http://craftsy.peterzeng.io/)
 
 ## Technologies
 
