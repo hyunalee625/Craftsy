@@ -31,7 +31,7 @@ Once logged in, users are able to add items to their shopping cart and have them
 
 If you already have an idea of what you'd like to purchase, go ahead and just type into the search bar. There's no need to browse through all of the categories to find what you're looking for.
 
-![Search Demo](./app/assets/readme/search_bar.gif)
+![Search Demo](./app/assets/readme/search.gif)
 
 ### Product Listings
 
