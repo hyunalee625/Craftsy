@@ -17,32 +17,24 @@ Craftsy is a curated marketplace for unique and handcrafted goods inspired by Et
 
 ## Features
 
-Craftsy was built with a focus on creating a seamless shopping experience. Below you'll find some features that were implemented with that effort in mind.
+Craftsy was built with a focus on creating a seamless shopping experience. Below you'll find a few highlights that showcase this philosophy.
 
-### User Accounts
+### _User Accounts & Site Functionality_
 
-Users are able to access the full functionality of this portfolio site without having to register for an account themselves, simply by clicking on the demo login. You can, of course, create an account of your own if you so choose.
+Users are able to access the full functionality of this portfolio site without having to register for an account themselves, simply by clicking on the demo login.
 
 Once logged in, users are able to add items to their shopping cart and have them persist until they are ready to checkout, whether that's in the next hour or the next day. No matter, products added to your cart will be there when you log back in.
 
 ![User Accounts Demo](./app/assets/readme/user_accounts.gif)
 
-### Search Bar
+### _Search Bar_
 
 If you already have an idea of what you'd like to purchase, go ahead and just type into the search bar. There's no need to browse through all of the categories to find what you're looking for.
 
-![Search Demo](./app/assets/readme/search.gif)
+![Search Demo](./app/assets/readme/search.png)
 
-### Product Listings
+### _Shopping Experience_
 
-Don't worry if you're not sure what you want to pick up yet. You'll find popular product categories located in the navigation bar, easily accessible from any page. Once you've found the perfect item, adding it to your cart is a breeze. So is updating the quantity directly from your cart.
+Browse popular product categories using the the navigation bar. Once a product catches your eye, check out the reviews at the bottom of the product page before finalizing your purchase. If you realize during the checkout process that you have the incorrect quantity, edit the number right there in your shopping cart and you're all set!
 
-![Shopping Demo](./app/assets/readme/shopping.gif)
-
-Opening up your own shop on Craftsy is also easy. Just navigate over to the shop manager icon in the navigation bar and you'll be able to add new product listings or update existing listings in no time.
-
-![Product Listing Demo](./app/assets/readme/product_listing.gif)
-
-### Product Reviews
-
-Any shopping experience would be incomplete without reviews to inform your purchasing decisions. Just scroll to the bottom of any product page to find out what others think before finalizing your order. Add your own review if you like as well!
+![Add to Cart Demo](./app/assets/readme/shopping.gif)
