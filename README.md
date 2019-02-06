@@ -25,11 +25,13 @@ Users are able to access the full functionality of this portfolio site without h
 
 Once logged in, users are able to add items to their shopping cart and have them persist until they are ready to checkout, whether that's in the next hour or the next day. No matter, products added to your cart will be there when you log back in.
 
-[![User Accounts Demo](./app/assets/readme/user_accounts.gif)]
+![User Accounts Demo](./app/assets/readme/user_accounts.gif)
 
 ### Search Bar
 
 If you already have an idea of what you'd like to purchase, go ahead and just type into the search bar. There's no need to browse through all of the categories to find what you're looking for.
+
+![Search Demo](./app/assets/readme/search_bar.gif)
 
 ### Product Listings
 
